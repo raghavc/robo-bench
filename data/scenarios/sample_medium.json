@@ -1,0 +1,176 @@
+{
+ "id": "scn-medium-00007",
+ "seed": 7,
+ "difficulty": "medium",
+ "start_node": "F1_N01",
+ "employee": {
+  "name": "Noah Patel",
+  "team": "Platform",
+  "manager": "Omar",
+  "habits": [
+   "usually hangs their bag on the back of their chair",
+   "often works from the lounges in the afternoon"
+  ]
+ },
+ "backpack": {
+  "description": "black backpack with a red keychain and a cat sticker on the front pocket",
+  "view": "F2_N06_v3",
+  "node": "F2_N06",
+  "spot": "leather chair by exit"
+ },
+ "decoys": [
+  {
+   "description": "black backpack with a red keychain and a luggage tag",
+   "view": "F2_N03_v1",
+   "node": "F2_N03"
+  }
+ ],
+ "timeline": [
+  {
+   "start": "09:00",
+   "end": "09:30",
+   "kind": "one_on_one",
+   "node": "F2_N03",
+   "title": "1:1 with Omar",
+   "calendar_node": null,
+   "happened": true
+  },
+  {
+   "start": "10:15",
+   "end": "11:45",
+   "kind": "focus",
+   "node": "F2_N06",
+   "title": "Focus block",
+   "calendar_node": null,
+   "happened": true
+  },
+  {
+   "start": "12:30",
+   "end": "13:15",
+   "kind": "lunch",
+   "node": "F1_N07",
+   "title": null,
+   "calendar_node": null,
+   "happened": true
+  },
+  {
+   "start": "13:30",
+   "end": "14:00",
+   "kind": "coffee_chat",
+   "node": "F1_N06",
+   "title": "Coffee chat with Maya",
+   "calendar_node": null,
+   "happened": true
+  },
+  {
+   "start": "14:15",
+   "end": "15:15",
+   "kind": "meeting",
+   "node": "F1_N03",
+   "title": "Hiring Debrief",
+   "calendar_node": null,
+   "happened": false
+  },
+  {
+   "start": "14:15",
+   "end": "15:15",
+   "kind": "social",
+   "node": "F2_N02",
+   "title": "Team happy hour",
+   "calendar_node": null,
+   "happened": true
+  }
+ ],
+ "clues": {
+  "calendar": [
+   {
+    "start": "09:00",
+    "end": "09:30",
+    "title": "1:1 with Omar",
+    "room": "Speakeasy Bar",
+    "floor": 2
+   },
+   {
+    "start": "10:15",
+    "end": "11:45",
+    "title": "Focus block",
+    "room": "Dining Room \u2014 West End",
+    "floor": 2
+   },
+   {
+    "start": "13:30",
+    "end": "14:00",
+    "title": "Coffee chat with Maya",
+    "room": "Piano Lounge",
+    "floor": 1
+   },
+   {
+    "start": "14:15",
+    "end": "15:15",
+    "title": "Hiring Debrief",
+    "room": "Conference Room A",
+    "floor": 1
+   },
+   {
+    "start": "14:15",
+    "end": "15:15",
+    "title": "Team happy hour",
+    "room": "Lounge \u2014 Center",
+    "floor": 2
+   }
+  ],
+  "badge_log": [
+   {
+    "time": "08:55",
+    "event": "badge in, floor 2"
+   },
+   {
+    "time": "12:25",
+    "event": "badge in, floor 1"
+   },
+   {
+    "time": "14:10",
+    "event": "badge in, floor 2"
+   },
+   {
+    "time": "15:25",
+    "event": "badge out, building exit"
+   }
+  ],
+  "chat": [
+   {
+    "time": "09:30",
+    "from": "Noah Patel",
+    "text": "just finished up in the speakeasy bar, bag and all"
+   },
+   {
+    "time": "12:30",
+    "from": "Noah Patel",
+    "text": "at the kitchen and realized my bag isn't with me, must have left it somewhere earlier"
+   },
+   {
+    "time": "12:30",
+    "from": "Noah Patel",
+    "text": "grabbing lunch in the kitchen, anyone want to join?"
+   },
+   {
+    "time": "13:55",
+    "from": "Maya",
+    "text": "heads up, Hiring Debrief is cancelled today"
+   },
+   {
+    "time": "15:55",
+    "from": "Noah Patel",
+    "text": "just got to the train and my backpack isn't with me \ud83d\ude29 can someone help find it?"
+   }
+  ]
+ },
+ "drop_index": 1,
+ "last_seen_index": 0,
+ "meta": {
+  "noise": [
+   "cancelled"
+  ],
+  "gap": 1
+ }
+}

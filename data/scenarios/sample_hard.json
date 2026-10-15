@@ -1,0 +1,232 @@
+{
+ "id": "scn-hard-00007",
+ "seed": 7,
+ "difficulty": "hard",
+ "start_node": "F1_N01",
+ "employee": {
+  "name": "Noah Patel",
+  "team": "Design",
+  "manager": "Omar",
+  "habits": [
+   "prefers window seats",
+   "tends to drop their bag under the table"
+  ]
+ },
+ "backpack": {
+  "description": "black backpack with a red keychain and a cat sticker on the front pocket",
+  "view": "F1_N08_v3",
+  "node": "F1_N08",
+  "spot": "orange sofas"
+ },
+ "decoys": [
+  {
+   "description": "black backpack with a red keychain and a luggage tag",
+   "view": "F2_N03_v1",
+   "node": "F2_N03"
+  },
+  {
+   "description": "black backpack with a red keychain and a luggage tag",
+   "view": "F1_N03_v1",
+   "node": "F1_N03"
+  }
+ ],
+ "timeline": [
+  {
+   "start": "09:00",
+   "end": "09:30",
+   "kind": "one_on_one",
+   "node": "F2_N03",
+   "title": "1:1 with Omar",
+   "calendar_node": null,
+   "happened": true
+  },
+  {
+   "start": "10:15",
+   "end": "11:45",
+   "kind": "focus",
+   "node": "F2_N06",
+   "title": "Focus block",
+   "calendar_node": null,
+   "happened": true
+  },
+  {
+   "start": "12:30",
+   "end": "13:00",
+   "kind": "coffee_chat",
+   "node": "F1_N06",
+   "title": "Coffee chat with Maya",
+   "calendar_node": null,
+   "happened": true
+  },
+  {
+   "start": "13:45",
+   "end": "14:30",
+   "kind": "lunch",
+   "node": "F1_N08",
+   "title": null,
+   "calendar_node": null,
+   "happened": true
+  },
+  {
+   "start": "15:15",
+   "end": "15:45",
+   "kind": "meeting",
+   "node": "F1_N04",
+   "title": "Q4 Roadmap",
+   "calendar_node": null,
+   "happened": false
+  },
+  {
+   "start": "15:15",
+   "end": "15:45",
+   "kind": "coffee_chat",
+   "node": "F2_N02",
+   "title": "Coffee chat with Maya (follow-up 2)",
+   "calendar_node": null,
+   "happened": true
+  },
+  {
+   "start": "16:00",
+   "end": "17:00",
+   "kind": "meeting",
+   "node": "F1_N03",
+   "title": "Sprint Planning",
+   "calendar_node": "F2_N06",
+   "happened": true
+  },
+  {
+   "start": "17:45",
+   "end": "18:45",
+   "kind": "social",
+   "node": "F2_N03",
+   "title": "Team happy hour",
+   "calendar_node": null,
+   "happened": true
+  }
+ ],
+ "clues": {
+  "calendar": [
+   {
+    "start": "09:00",
+    "end": "09:30",
+    "title": "1:1 with Omar",
+    "room": "Speakeasy Bar",
+    "floor": 2
+   },
+   {
+    "start": "10:15",
+    "end": "11:45",
+    "title": "Focus block",
+    "room": "Dining Room \u2014 West End",
+    "floor": 2
+   },
+   {
+    "start": "12:30",
+    "end": "13:00",
+    "title": "Coffee chat with Maya",
+    "room": "Piano Lounge",
+    "floor": 1
+   },
+   {
+    "start": "15:15",
+    "end": "15:45",
+    "title": "Q4 Roadmap",
+    "room": "Terrace Entrance",
+    "floor": 1
+   },
+   {
+    "start": "15:15",
+    "end": "15:45",
+    "title": "Coffee chat with Maya (follow-up 2)",
+    "room": "Lounge \u2014 Center",
+    "floor": 2
+   },
+   {
+    "start": "16:00",
+    "end": "17:00",
+    "title": "Sprint Planning",
+    "room": "Dining Room \u2014 West End",
+    "floor": 2
+   },
+   {
+    "start": "17:45",
+    "end": "18:45",
+    "title": "Team happy hour",
+    "room": "Speakeasy Bar",
+    "floor": 2
+   }
+  ],
+  "badge_log": [
+   {
+    "time": "08:55",
+    "event": "badge in, floor 2"
+   },
+   {
+    "time": "12:25",
+    "event": "badge in, floor 1"
+   },
+   {
+    "time": "15:10",
+    "event": "badge in, floor 2"
+   },
+   {
+    "time": "15:55",
+    "event": "badge in, floor 1"
+   },
+   {
+    "time": "17:40",
+    "event": "badge in, floor 2"
+   },
+   {
+    "time": "18:55",
+    "event": "badge out, building exit"
+   }
+  ],
+  "chat": [
+   {
+    "time": "11:45",
+    "from": "Noah Patel",
+    "text": "pulled my laptop out of my backpack in the dining room \u2014 west end"
+   },
+   {
+    "time": "13:45",
+    "from": "Noah Patel",
+    "text": "grabbing lunch in the main lounge, anyone want to join?"
+   },
+   {
+    "time": "14:55",
+    "from": "Maya",
+    "text": "heads up, Q4 Roadmap is cancelled today"
+   },
+   {
+    "time": "15:15",
+    "from": "Noah Patel",
+    "text": "at the lounge \u2014 center and realized my bag isn't with me, must have left it somewhere earlier"
+   },
+   {
+    "time": "15:50",
+    "from": "Omar",
+    "text": "moving Sprint Planning to Conference Room A, the other room is taken"
+   },
+   {
+    "time": "19:25",
+    "from": "Noah Patel",
+    "text": "just got to the train and my backpack isn't with me \ud83d\ude29 can someone help find it?"
+   },
+   {
+    "time": "19:27",
+    "from": "Noah Patel",
+    "text": "maybe the conference room a? honestly not sure"
+   }
+  ]
+ },
+ "drop_index": 3,
+ "last_seen_index": 1,
+ "meta": {
+  "noise": [
+   "room_change",
+   "cancelled"
+  ],
+  "gap": 2
+ }
+}

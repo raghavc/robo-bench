@@ -1,0 +1,106 @@
+{
+ "id": "scn-easy-00007",
+ "seed": 7,
+ "difficulty": "easy",
+ "start_node": "F1_N01",
+ "employee": {
+  "name": "Noah Patel",
+  "team": "Research",
+  "manager": "Omar",
+  "habits": [
+   "usually hangs their bag on the back of their chair",
+   "often works from the lounges in the afternoon"
+  ]
+ },
+ "backpack": {
+  "description": "black backpack with a red keychain and a cat sticker on the front pocket",
+  "view": "F1_N07_v3",
+  "node": "F1_N07",
+  "spot": "kitchen counter by sink"
+ },
+ "decoys": [],
+ "timeline": [
+  {
+   "start": "09:15",
+   "end": "09:45",
+   "kind": "one_on_one",
+   "node": "F2_N07",
+   "title": "1:1 with Omar",
+   "calendar_node": null,
+   "happened": true
+  },
+  {
+   "start": "10:00",
+   "end": "11:30",
+   "kind": "focus",
+   "node": "F2_N02",
+   "title": "Heads-down: eval harness",
+   "calendar_node": null,
+   "happened": true
+  },
+  {
+   "start": "11:45",
+   "end": "12:30",
+   "kind": "lunch",
+   "node": "F1_N07",
+   "title": null,
+   "calendar_node": null,
+   "happened": true
+  }
+ ],
+ "clues": {
+  "calendar": [
+   {
+    "start": "09:15",
+    "end": "09:45",
+    "title": "1:1 with Omar",
+    "room": "Dining Annex & Balcony Door",
+    "floor": 2
+   },
+   {
+    "start": "10:00",
+    "end": "11:30",
+    "title": "Heads-down: eval harness",
+    "room": "Lounge \u2014 Center",
+    "floor": 2
+   }
+  ],
+  "badge_log": [
+   {
+    "time": "09:10",
+    "event": "badge in, floor 2"
+   },
+   {
+    "time": "11:40",
+    "event": "badge in, floor 1"
+   },
+   {
+    "time": "12:40",
+    "event": "badge out, building exit"
+   }
+  ],
+  "chat": [
+   {
+    "time": "11:45",
+    "from": "Noah Patel",
+    "text": "grabbing lunch in the kitchen, anyone want to join?"
+   },
+   {
+    "time": "12:30",
+    "from": "Noah Patel",
+    "text": "pulled my laptop out of my backpack in the kitchen"
+   },
+   {
+    "time": "13:10",
+    "from": "Noah Patel",
+    "text": "just got to the train and my backpack isn't with me \ud83d\ude29 can someone help find it?"
+   }
+  ]
+ },
+ "drop_index": 2,
+ "last_seen_index": 2,
+ "meta": {
+  "noise": [],
+  "gap": 0
+ }
+}
