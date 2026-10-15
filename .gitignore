@@ -1,0 +1,6 @@
+.env
+__pycache__/
+results/spend_ledger.json
+*.pyc
+.DS_Store
+data/_work/
