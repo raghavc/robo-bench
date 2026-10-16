@@ -1,0 +1,3700 @@
+{
+ "source": "roboflow autolabel gemini-4-argon-boxes, project office-search-env; floors 3\u20136 from the berkeley-floors-3-6 auto-label job (backpacks come from bag_labels.json); 6 views hand-labeled in Roboflow",
+ "views": {
+  "F2_N06_v0": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N03_v0": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "trash can"
+   }
+  ],
+  "F2_N03_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N05_v0": [
+   {
+    "class": "backpack",
+    "attributes": "a bag belonging to someone working nearby",
+    "bystander": true
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "person"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N01_v2": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   }
+  ],
+  "F2_N02_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N07_v0": [
+   {
+    "class": "door"
+   }
+  ],
+  "F2_N04_v2": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "trash can"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N07_v2": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N07_v3": [
+   {
+    "class": "backpack",
+    "attributes": "a bag belonging to someone working nearby",
+    "bystander": true
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "person"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N08_v2": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "person"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N07_v1": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   }
+  ],
+  "F2_N06_v1": [
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N04_v3": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "trash can"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N05_v1": [
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N05_v2": [
+   {
+    "class": "trash can"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N01_v3": [
+   {
+    "class": "door"
+   }
+  ],
+  "F2_N04_v0": [],
+  "F2_N03_v2": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F2_N06_v2": [
+   {
+    "class": "backpack",
+    "attributes": "a bag belonging to someone working nearby",
+    "bystander": true
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "person"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "trash can"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N03_v1": [
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "trash can"
+   },
+   {
+    "class": "trash can"
+   }
+  ],
+  "F2_N02_v1": [
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N05_v3": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "trash can"
+   }
+  ],
+  "F2_N08_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N08_v0": [
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N04_v1": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   }
+  ],
+  "F2_N06_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N01_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N06_v1": [
+   {
+    "class": "backpack",
+    "attributes": "a bag belonging to someone working nearby",
+    "bystander": true
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "person"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "trash can"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N05_v0": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N03_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N05_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F1_N01_v1": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   }
+  ],
+  "F1_N05_v2": [],
+  "F1_N04_v0": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N01_v2": [
+   {
+    "class": "door"
+   }
+  ],
+  "F1_N02_v1": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N04_v1": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N06_v3": [
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N07_v0": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N07_v1": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F1_N07_v3": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N08_v0": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N02_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N01_v1": [
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   }
+  ],
+  "F2_N02_v2": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F2_N08_v1": [],
+  "F1_N08_v3": [
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "person"
+   },
+   {
+    "class": "person"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N03_v3": [
+   {
+    "class": "potted plant"
+   }
+  ],
+  "F1_N02_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F1_N06_v2": [
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F1_N01_v3": [],
+  "F1_N08_v2": [
+   {
+    "class": "door"
+   }
+  ],
+  "F1_N04_v2": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N03_v2": [
+   {
+    "class": "potted plant"
+   }
+  ],
+  "F1_N04_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N03_v1": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F1_N01_v0": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "potted plant"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   }
+  ],
+  "F1_N05_v1": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "potted plant"
+   }
+  ],
+  "F1_N07_v2": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "door"
+   }
+  ],
+  "F1_N08_v1": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "cabinet"
+   }
+  ],
+  "F1_N02_v2": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   }
+  ],
+  "F1_N06_v0": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F2_N02_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F3_N07_v2": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F3_N07_v0": [
+   {
+    "class": "window"
+   }
+  ],
+  "F4_N04_v3": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F4_N01_v2": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   }
+  ],
+  "F5_N02_v2": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F3_N04_v1": [
+   {
+    "class": "door"
+   }
+  ],
+  "F3_N05_v1": [],
+  "F3_N05_v2": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F4_N05_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F3_N04_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F3_N02_v1": [
+   {
+    "class": "door"
+   }
+  ],
+  "F4_N06_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "trash can"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F4_N04_v1": [
+   {
+    "class": "door"
+   }
+  ],
+  "F5_N01_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "person"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F3_N07_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F4_N03_v2": [
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F3_N05_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F6_N01_v2": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F3_N01_v2": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   }
+  ],
+  "F4_N03_v3": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F3_N07_v1": [
+   {
+    "class": "person"
+   }
+  ],
+  "F4_N02_v2": [
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F3_N05_v0": [],
+  "F5_N01_v1": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F4_N01_v3": [
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "door"
+   }
+  ],
+  "F4_N06_v1": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F3_N01_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "person"
+   },
+   {
+    "class": "person"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F4_N04_v2": [
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F6_N02_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F3_N06_v3": [
+   {
+    "class": "door"
+   }
+  ],
+  "F4_N02_v3": [
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F3_N04_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F5_N02_v0": [
+   {
+    "class": "table"
+   }
+  ],
+  "F4_N02_v0": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F3_N06_v1": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F4_N05_v1": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F5_N01_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F6_N01_v1": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F4_N05_v2": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F4_N05_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F3_N01_v1": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F4_N01_v0": [
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F3_N01_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F6_N01_v3": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F6_N02_v1": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "person"
+   },
+   {
+    "class": "person"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F3_N02_v2": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   }
+  ],
+  "F3_N06_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F4_N02_v1": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F5_N01_v2": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F4_N03_v0": [
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "bar stool"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   }
+  ],
+  "F5_N02_v3": [
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "framed artwork"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F4_N03_v1": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F6_N02_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F5_N02_v1": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F3_N02_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F4_N01_v1": [
+   {
+    "class": "cabinet"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   },
+   {
+    "class": "window"
+   }
+  ],
+  "F6_N01_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F3_N03_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "computer"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "towel"
+   }
+  ],
+  "F3_N04_v2": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   }
+  ],
+  "F3_N06_v2": [
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   }
+  ],
+  "F4_N06_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "fridge"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F4_N04_v0": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "door"
+   },
+   {
+    "class": "sign"
+   },
+   {
+    "class": "sofa"
+   }
+  ],
+  "F4_N06_v2": [
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "chair"
+   },
+   {
+    "class": "foosball table"
+   },
+   {
+    "class": "sofa"
+   },
+   {
+    "class": "table"
+   }
+  ],
+  "F6_N02_v2": []
+ }
+}

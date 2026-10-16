@@ -1,0 +1,128 @@
+{
+  "bag": "one physical backpack (black Databricks) photographed in four configurations",
+  "variants": {
+    "plain": "black Databricks backpack with no cap and no keychain",
+    "hat": "black Databricks backpack with a black cap strapped on (neon-green ring logo)",
+    "keychain": "black Databricks backpack with a keychain (pink tag, keys, brass padlock)",
+    "hat_keychain": "black Databricks backpack with a black cap strapped on and a keychain with a pink tag"
+  },
+  "placements": [
+    {
+      "id": "P1",
+      "variant": "plain",
+      "spot": "under the standing desk",
+      "views": {
+        "F3_N03_v0": 8834
+      },
+      "empty": {
+        "F3_N03_v0": 8833
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "P2",
+      "variant": "hat",
+      "spot": "on the floor in the corner by the whiteboard",
+      "views": {
+        "F3_N05_v3": 8842
+      },
+      "confidence": "high",
+      "note": "keychain not visible from this angle"
+    },
+    {
+      "id": "P3",
+      "variant": "hat_keychain",
+      "spot": "on the floor in the corner by the TV wall",
+      "views": {
+        "F3_N07_v3": 8850
+      },
+      "confidence": "high",
+      "alternate_photos": {
+        "8851": "same spot, cap/keychain mostly hidden \u2014 unverified, not used"
+      }
+    },
+    {
+      "id": "P4",
+      "variant": "hat_keychain",
+      "spot": "on a bar stool at the kitchen counter",
+      "views": {
+        "F4_N03_v0": 8861,
+        "F4_N02_v3": 8860
+      },
+      "confidence": "high",
+      "note": "small in the distance from F4_N02_v3"
+    },
+    {
+      "id": "P5",
+      "variant": "plain",
+      "spot": "on the wooden bench under the wall TV",
+      "views": {
+        "F4_N04_v3": 8868
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "P6",
+      "variant": "hat",
+      "spot": "on the floor against the wall between the window corner and the glass whiteboard",
+      "views": {
+        "F4_N05_v2": 8887,
+        "F4_N05_v3": 8888
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "P7",
+      "variant": "keychain",
+      "spot": "on an orange armchair by the glass whiteboard",
+      "views": {
+        "F4_N06_v1": 8890
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "P8",
+      "variant": "keychain",
+      "spot": "on the floor by the low bench under the whiteboard",
+      "views": {
+        "F5_N02_v3": 8877
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "P9",
+      "variant": "hat",
+      "spot": "on a round white table by the lime booths",
+      "views": {
+        "F6_N01_v0": 8893
+      },
+      "confidence": "high",
+      "note": "keychain not visible from this angle"
+    },
+    {
+      "id": "P10",
+      "variant": "hat",
+      "spot": "on the back table by the whiteboard",
+      "views": {
+        "F5_N01_v0": 8870
+      },
+      "confidence": "high",
+      "note": "small, far side of the room; keychain not visible"
+    },
+    {
+      "id": "P11",
+      "variant": "hat",
+      "spot": "on a yellow lounge chair by the windows",
+      "views": {
+        "F3_N01_v0": 8881
+      },
+      "confidence": "medium",
+      "note": "seen from behind in low light; cap visible, logo not"
+    }
+  ],
+  "notes": [
+    "Views listed under a placement show that bag; every other Berkeley view shows no bag of ours.",
+    "Only F3_N03_v0 has both an empty photo (main image) and a bag photo (variants/).",
+    "IMG_8852 (Meeting Room C whiteboard with a derivative written on it) is not used."
+  ]
+}
