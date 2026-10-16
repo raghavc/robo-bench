@@ -1,0 +1,2016 @@
+{
+  "version": 1,
+  "units": "metres (approximate)",
+  "view_order": "v0..v3 consecutive turns at a stop; compass direction not recorded",
+  "topology_note": "Edges and positions are inferred from the photos \u2014 verify against the real layout.",
+  "floors": [
+    {
+      "floor": 1,
+      "name": "Floor 1 \u2014 Terrace Level",
+      "style": "beige office floor, wood panelling, terrace access",
+      "nodes": [
+        {
+          "id": "F1_N01",
+          "room": "West Hallway & Stairwell",
+          "room_type": "hallway",
+          "position": {
+            "x": -24,
+            "z": 0
+          },
+          "neighbors": [
+            "F1_N02"
+          ],
+          "views": [
+            {
+              "id": "F1_N01_v0",
+              "file": "images/F1_N01_v0.jpg",
+              "source": "IMG_8765.JPG",
+              "description": "Carpeted hallway leading to the lobby glass doors",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N01_v1",
+              "file": "images/F1_N01_v1.jpg",
+              "source": "IMG_8766.JPG",
+              "description": "Stairwell door with handrail and evacuation plan sign",
+              "candidate_spots": [],
+              "clue_surface": "evacuation plan sign",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N01_v2",
+              "file": "images/F1_N01_v2.jpg",
+              "source": "IMG_8767.JPG",
+              "description": "Hallway looking back, glass door handle in foreground",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N01_v3",
+              "file": "images/F1_N01_v3.jpg",
+              "source": "IMG_8768.JPG",
+              "description": "Blank wall (low information)",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F1_N02",
+          "room": "Lobby",
+          "room_type": "lobby",
+          "position": {
+            "x": -12,
+            "z": 2
+          },
+          "neighbors": [
+            "F1_N01",
+            "F1_N03",
+            "F1_N04"
+          ],
+          "views": [
+            {
+              "id": "F1_N02_v0",
+              "file": "images/F1_N02_v0.jpg",
+              "source": "IMG_8769.JPG",
+              "description": "Lobby with terrace glass doors, potted plant, sign stand, edge of a chair",
+              "candidate_spots": [
+                "lobby chair"
+              ],
+              "clue_surface": "sign stand",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N02_v1",
+              "file": "images/F1_N02_v1.jpg",
+              "source": "IMG_8770.JPG",
+              "description": "Glass door into Conference Room A",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N02_v2",
+              "file": "images/F1_N02_v2.jpg",
+              "source": "IMG_8771.JPG",
+              "description": "Wood-panelled hallway back toward the stairwell",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N02_v3",
+              "file": "images/F1_N02_v3.jpg",
+              "source": "IMG_8772.JPG",
+              "description": "Conference Room A seen through doorway: table and striped chairs",
+              "candidate_spots": [
+                "conference chairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F1_N03",
+          "room": "Conference Room A",
+          "room_type": "conference_room",
+          "position": {
+            "x": -10,
+            "z": 12
+          },
+          "neighbors": [
+            "F1_N02",
+            "F1_N04"
+          ],
+          "views": [
+            {
+              "id": "F1_N03_v0",
+              "file": "images/F1_N03_v0.jpg",
+              "source": "IMG_8773.JPG",
+              "description": "Window corner with column, striped chair at table, terrace outside",
+              "candidate_spots": [
+                "window-side conference chair"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N03_v1",
+              "file": "images/F1_N03_v1.jpg",
+              "source": "IMG_8774.JPG",
+              "description": "Long conference table with striped chairs, framed art, door at far end",
+              "candidate_spots": [
+                "conference table / chairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N03_v2",
+              "file": "images/F1_N03_v2.jpg",
+              "source": "IMG_8775.JPG",
+              "description": "Wood wall panel (low information)",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N03_v3",
+              "file": "images/F1_N03_v3.jpg",
+              "source": "IMG_8776.JPG",
+              "description": "Palm plant by the window",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F1_N04",
+          "room": "Terrace Entrance",
+          "room_type": "lobby",
+          "position": {
+            "x": 0,
+            "z": 4
+          },
+          "neighbors": [
+            "F1_N02",
+            "F1_N03",
+            "F1_N05"
+          ],
+          "views": [
+            {
+              "id": "F1_N04_v0",
+              "file": "images/F1_N04_v0.jpg",
+              "source": "IMG_8777.JPG",
+              "description": "Terrace door with entry mat and plant",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N04_v1",
+              "file": "images/F1_N04_v1.jpg",
+              "source": "IMG_8778.JPG",
+              "description": "Glass door with sign stand / placard beside it",
+              "candidate_spots": [],
+              "clue_surface": "placard by door",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N04_v2",
+              "file": "images/F1_N04_v2.jpg",
+              "source": "IMG_8779.JPG",
+              "description": "Long wood-panelled corridor",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N04_v3",
+              "file": "images/F1_N04_v3.jpg",
+              "source": "IMG_8780.JPG",
+              "description": "Conference room with long windows, table and striped chairs",
+              "candidate_spots": [
+                "conference chairs by windows"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F1_N05",
+          "room": "Gallery Corridor",
+          "room_type": "corridor",
+          "position": {
+            "x": 8,
+            "z": 0
+          },
+          "neighbors": [
+            "F1_N04",
+            "F1_N06"
+          ],
+          "views": [
+            {
+              "id": "F1_N05_v0",
+              "file": "images/F1_N05_v0.jpg",
+              "source": "IMG_8781.JPG",
+              "description": "Corridor opening into the piano lounge, credenza and plant",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N05_v1",
+              "file": "images/F1_N05_v1.jpg",
+              "source": "IMG_8782.JPG",
+              "description": "Wall with framed art, credenza and plant",
+              "candidate_spots": [
+                "credenza"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N05_v2",
+              "file": "images/F1_N05_v2.jpg",
+              "source": "IMG_8783.JPG",
+              "description": "Wood wall panel (low information)",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N05_v3",
+              "file": "images/F1_N05_v3.jpg",
+              "source": "IMG_8784.JPG",
+              "description": "Glass doors back toward the conference rooms",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F1_N06",
+          "room": "Piano Lounge",
+          "room_type": "lounge",
+          "position": {
+            "x": 16,
+            "z": 6
+          },
+          "neighbors": [
+            "F1_N05",
+            "F1_N07",
+            "F1_N08"
+          ],
+          "views": [
+            {
+              "id": "F1_N06_v0",
+              "file": "images/F1_N06_v0.jpg",
+              "source": "IMG_8785.JPG",
+              "description": "Grand piano by the windows, terrace beyond",
+              "candidate_spots": [
+                "piano bench"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N06_v1",
+              "file": "images/F1_N06_v1.jpg",
+              "source": "IMG_8786.JPG",
+              "description": "Lounge tables and chairs, people in the distance",
+              "candidate_spots": [
+                "lounge tables"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": true
+            },
+            {
+              "id": "F1_N06_v2",
+              "file": "images/F1_N06_v2.jpg",
+              "source": "IMG_8787.JPG",
+              "description": "Corridor with wood door and exit sign",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N06_v3",
+              "file": "images/F1_N06_v3.jpg",
+              "source": "IMG_8788.JPG",
+              "description": "Potted plant against an orange wall",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F1_N07",
+          "room": "Kitchen",
+          "room_type": "kitchen",
+          "position": {
+            "x": 22,
+            "z": -6
+          },
+          "neighbors": [
+            "F1_N06",
+            "F1_N08"
+          ],
+          "views": [
+            {
+              "id": "F1_N07_v0",
+              "file": "images/F1_N07_v0.jpg",
+              "source": "IMG_8789.JPG",
+              "description": "Kitchen counter next to a door, lounge visible beyond",
+              "candidate_spots": [
+                "kitchen counter"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N07_v1",
+              "file": "images/F1_N07_v1.jpg",
+              "source": "IMG_8790.JPG",
+              "description": "Closed double door",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N07_v2",
+              "file": "images/F1_N07_v2.jpg",
+              "source": "IMG_8791.JPG",
+              "description": "Corner by the cabinets (low information)",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N07_v3",
+              "file": "images/F1_N07_v3.jpg",
+              "source": "IMG_8792.JPG",
+              "description": "Kitchen with fridge, stove, sink and counters",
+              "candidate_spots": [
+                "kitchen counter by sink"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F1_N08",
+          "room": "Main Lounge",
+          "room_type": "lounge",
+          "position": {
+            "x": 24,
+            "z": 8
+          },
+          "neighbors": [
+            "F1_N06",
+            "F1_N07"
+          ],
+          "views": [
+            {
+              "id": "F1_N08_v0",
+              "file": "images/F1_N08_v0.jpg",
+              "source": "IMG_8793.JPG",
+              "description": "Armchairs and round ottoman by the windows",
+              "candidate_spots": [
+                "armchairs / ottoman"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N08_v1",
+              "file": "images/F1_N08_v1.jpg",
+              "source": "IMG_8794.JPG",
+              "description": "Wall-mounted TV over dark cabinets",
+              "candidate_spots": [
+                "TV cabinet"
+              ],
+              "clue_surface": "TV screen",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N08_v2",
+              "file": "images/F1_N08_v2.jpg",
+              "source": "IMG_8795.JPG",
+              "description": "Exit door with push bar",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F1_N08_v3",
+              "file": "images/F1_N08_v3.jpg",
+              "source": "IMG_8796.JPG",
+              "description": "Long lounge with orange sofas and coffee table, people at the far end",
+              "candidate_spots": [
+                "orange sofas"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": true
+            }
+          ]
+        }
+      ],
+      "tower_floor": 2
+    },
+    {
+      "floor": 2,
+      "name": "Floor 2 \u2014 Club Level",
+      "style": "teal speakeasy-style club with bay views",
+      "nodes": [
+        {
+          "id": "F2_N01",
+          "room": "Entry Vestibule",
+          "room_type": "lobby",
+          "position": {
+            "x": -22,
+            "z": 0
+          },
+          "neighbors": [
+            "F2_N02",
+            "F2_N04"
+          ],
+          "views": [
+            {
+              "id": "F2_N01_v0",
+              "file": "images/F2_N01_v0.jpg",
+              "source": "IMG_8797.JPG",
+              "description": "Entry corridor opening into the lounge",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N01_v1",
+              "file": "images/F2_N01_v1.jpg",
+              "source": "IMG_8798.JPG",
+              "description": "Wall with maximum-occupancy sign (Speakeasy / Lounge / Dining) and exit-route sign",
+              "candidate_spots": [],
+              "clue_surface": "occupancy sign",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N01_v2",
+              "file": "images/F2_N01_v2.jpg",
+              "source": "IMG_8799.JPG",
+              "description": "Hand-painted teal door",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N01_v3",
+              "file": "images/F2_N01_v3.jpg",
+              "source": "IMG_8800.JPG",
+              "description": "Teal panelled wall (low information)",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F2_N02",
+          "room": "Lounge \u2014 Center",
+          "room_type": "lounge",
+          "position": {
+            "x": -10,
+            "z": 0
+          },
+          "neighbors": [
+            "F2_N01",
+            "F2_N03",
+            "F2_N08"
+          ],
+          "views": [
+            {
+              "id": "F2_N02_v0",
+              "file": "images/F2_N02_v0.jpg",
+              "source": "IMG_8801.JPG",
+              "description": "Pillar with framed art between curtains",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N02_v1",
+              "file": "images/F2_N02_v1.jpg",
+              "source": "IMG_8802.JPG",
+              "description": "Bar with stools, curved velvet sofa, window table",
+              "candidate_spots": [
+                "velvet sofa",
+                "bar stools"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N02_v2",
+              "file": "images/F2_N02_v2.jpg",
+              "source": "IMG_8803.JPG",
+              "description": "Library nook: two desks with lamps, books and a globe, double doors behind",
+              "candidate_spots": [
+                "library desks"
+              ],
+              "clue_surface": "desks (room for a post-it)",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N02_v3",
+              "file": "images/F2_N02_v3.jpg",
+              "source": "IMG_8804.JPG",
+              "description": "Fireplace area with tiger-print armchairs and velvet sofa",
+              "candidate_spots": [
+                "tiger-print armchairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F2_N03",
+          "room": "Speakeasy Bar",
+          "room_type": "bar",
+          "position": {
+            "x": 0,
+            "z": -8
+          },
+          "neighbors": [
+            "F2_N02",
+            "F2_N04",
+            "F2_N07"
+          ],
+          "views": [
+            {
+              "id": "F2_N03_v0",
+              "file": "images/F2_N03_v0.jpg",
+              "source": "IMG_8805.JPG",
+              "description": "Balcony door with trash bin",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N03_v1",
+              "file": "images/F2_N03_v1.jpg",
+              "source": "IMG_8806.JPG",
+              "description": "Bar counter with stools and pendant lights",
+              "candidate_spots": [
+                "bar stools"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N03_v2",
+              "file": "images/F2_N03_v2.jpg",
+              "source": "IMG_8807.JPG",
+              "description": "Long view of the lounge and seating",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N03_v3",
+              "file": "images/F2_N03_v3.jpg",
+              "source": "IMG_8808.JPG",
+              "description": "Window table for two overlooking the Bay Bridge",
+              "candidate_spots": [
+                "window table chairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F2_N04",
+          "room": "Back Corridor & Restrooms",
+          "room_type": "corridor",
+          "position": {
+            "x": -14,
+            "z": -12
+          },
+          "neighbors": [
+            "F2_N01",
+            "F2_N03"
+          ],
+          "views": [
+            {
+              "id": "F2_N04_v0",
+              "file": "images/F2_N04_v0.jpg",
+              "source": "IMG_8813.JPG",
+              "description": "Teal wall (low information)",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N04_v1",
+              "file": "images/F2_N04_v1.jpg",
+              "source": "IMG_8814.JPG",
+              "description": "Corridor to the restroom door",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N04_v2",
+              "file": "images/F2_N04_v2.jpg",
+              "source": "IMG_8815.JPG",
+              "description": "Back-bar corridor with shelving and a trash bin",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N04_v3",
+              "file": "images/F2_N04_v3.jpg",
+              "source": "IMG_8816.JPG",
+              "description": "Corridor looking back into the lounge",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F2_N05",
+          "room": "Dining Room \u2014 East",
+          "room_type": "dining_room",
+          "position": {
+            "x": 6,
+            "z": 10
+          },
+          "neighbors": [
+            "F2_N06",
+            "F2_N08"
+          ],
+          "views": [
+            {
+              "id": "F2_N05_v0",
+              "file": "images/F2_N05_v0.jpg",
+              "source": "IMG_8817.JPG",
+              "description": "Long dining table with leather chairs, a person working on a laptop",
+              "candidate_spots": [
+                "dining chairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": true
+            },
+            {
+              "id": "F2_N05_v1",
+              "file": "images/F2_N05_v1.jpg",
+              "source": "IMG_8818.JPG",
+              "description": "Curtained window corner",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N05_v2",
+              "file": "images/F2_N05_v2.jpg",
+              "source": "IMG_8819.JPG",
+              "description": "Mirror column and trash bin (photographer reflection)",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": true
+            },
+            {
+              "id": "F2_N05_v3",
+              "file": "images/F2_N05_v3.jpg",
+              "source": "IMG_8820.JPG",
+              "description": "Dining table with portraits on the wall, marble fireplace",
+              "candidate_spots": [
+                "dining table"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F2_N06",
+          "room": "Dining Room \u2014 West End",
+          "room_type": "dining_room",
+          "position": {
+            "x": 18,
+            "z": 10
+          },
+          "neighbors": [
+            "F2_N05",
+            "F2_N07"
+          ],
+          "views": [
+            {
+              "id": "F2_N06_v0",
+              "file": "images/F2_N06_v0.jpg",
+              "source": "IMG_8821.JPG",
+              "description": "Curtained corner",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N06_v1",
+              "file": "images/F2_N06_v1.jpg",
+              "source": "IMG_8822.JPG",
+              "description": "Window view over the city",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N06_v2",
+              "file": "images/F2_N06_v2.jpg",
+              "source": "IMG_8823.JPG",
+              "description": "Long table with leather chairs, people working",
+              "candidate_spots": [
+                "long-table chairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": true
+            },
+            {
+              "id": "F2_N06_v3",
+              "file": "images/F2_N06_v3.jpg",
+              "source": "IMG_8824.JPG",
+              "description": "Exit door, balcony door and a leather chair",
+              "candidate_spots": [
+                "leather chair by exit"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F2_N07",
+          "room": "Dining Annex & Balcony Door",
+          "room_type": "dining_room",
+          "position": {
+            "x": 20,
+            "z": 0
+          },
+          "neighbors": [
+            "F2_N03",
+            "F2_N06"
+          ],
+          "views": [
+            {
+              "id": "F2_N07_v0",
+              "file": "images/F2_N07_v0.jpg",
+              "source": "IMG_8825.JPG",
+              "description": "Hand-painted door (close-up)",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N07_v1",
+              "file": "images/F2_N07_v1.jpg",
+              "source": "IMG_8826.JPG",
+              "description": "Balcony door with view of Salesforce Tower",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N07_v2",
+              "file": "images/F2_N07_v2.jpg",
+              "source": "IMG_8827.JPG",
+              "description": "Window corner with chair and table, Bay Bridge view",
+              "candidate_spots": [
+                "window chair"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N07_v3",
+              "file": "images/F2_N07_v3.jpg",
+              "source": "IMG_8828.JPG",
+              "description": "Long table room with a person working, painted door",
+              "candidate_spots": [
+                "long-table chairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": true
+            }
+          ]
+        },
+        {
+          "id": "F2_N08",
+          "room": "Lounge \u2014 Fireplace",
+          "room_type": "lounge",
+          "position": {
+            "x": -4,
+            "z": 8
+          },
+          "neighbors": [
+            "F2_N02",
+            "F2_N05"
+          ],
+          "views": [
+            {
+              "id": "F2_N08_v0",
+              "file": "images/F2_N08_v0.jpg",
+              "source": "IMG_8829.JPG",
+              "description": "Pillar with view across the lounge to the bar",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N08_v1",
+              "file": "images/F2_N08_v1.jpg",
+              "source": "IMG_8830.JPG",
+              "description": "Artwork close-up (blurry, low information)",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F2_N08_v2",
+              "file": "images/F2_N08_v2.jpg",
+              "source": "IMG_8831.JPG",
+              "description": "Corridor toward the dining room with portraits",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": true
+            },
+            {
+              "id": "F2_N08_v3",
+              "file": "images/F2_N08_v3.jpg",
+              "source": "IMG_8832.JPG",
+              "description": "Marble fireplace with tiger-print chairs (photographer reflection)",
+              "candidate_spots": [
+                "fireplace armchairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": true
+            }
+          ]
+        }
+      ],
+      "tower_floor": 58
+    },
+    {
+      "floor": 3,
+      "name": "Floor 3 \u2014 Meeting Wing",
+      "style": "Level 3 northeast wing: carpeted corridor, focus room and small meeting rooms",
+      "tower_floor": 20,
+      "nodes": [
+        {
+          "id": "F3_N01",
+          "room": "Window Walkway",
+          "room_type": "corridor",
+          "position": {
+            "x": -22,
+            "z": 4
+          },
+          "neighbors": [
+            "F3_N02"
+          ],
+          "views": [
+            {
+              "id": "F3_N01_v0",
+              "file": "images/F3_N01_v0.jpg",
+              "source": "IMG_8881.JPG",
+              "description": "Window corner with yellow lounge chairs and a small round table",
+              "candidate_spots": [
+                "yellow lounge chairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N01_v1",
+              "file": "images/F3_N01_v1.jpg",
+              "source": "IMG_8882.JPG",
+              "description": "Narrow walkway between a white column and the glass wall",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N01_v2",
+              "file": "images/F3_N01_v2.jpg",
+              "source": "IMG_8883.JPG",
+              "description": "Glass door with a 'Level 3 Northeast' sign opening onto a carpeted corridor",
+              "candidate_spots": [],
+              "clue_surface": "door sign",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N01_v3",
+              "file": "images/F3_N01_v3.jpg",
+              "source": "IMG_8884.JPG",
+              "description": "Long glass walkway with yellow chairs along the windows",
+              "candidate_spots": [
+                "yellow chairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F3_N02",
+          "room": "Northeast Corridor",
+          "room_type": "hallway",
+          "position": {
+            "x": -10,
+            "z": 0
+          },
+          "neighbors": [
+            "F3_N01",
+            "F3_N03",
+            "F3_N04",
+            "F3_N06",
+            "F3_N07"
+          ],
+          "views": [
+            {
+              "id": "F3_N02_v0",
+              "file": "images/F3_N02_v0.jpg",
+              "source": "IMG_8878.JPG",
+              "description": "Carpeted corridor lined with wood doors and frosted-glass rooms",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N02_v1",
+              "file": "images/F3_N02_v1.jpg",
+              "source": "IMG_8879.JPG",
+              "description": "White corridor leading to an exit door",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N02_v2",
+              "file": "images/F3_N02_v2.jpg",
+              "source": "IMG_8880.JPG",
+              "description": "Carpeted corridor between frosted-glass meeting rooms",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F3_N03",
+          "room": "Focus Room",
+          "room_type": "focus_room",
+          "position": {
+            "x": -12,
+            "z": 12
+          },
+          "neighbors": [
+            "F3_N02"
+          ],
+          "views": [
+            {
+              "id": "F3_N03_v0",
+              "file": "images/F3_N03_v0.jpg",
+              "source": "IMG_8833.JPG",
+              "description": "Single-desk focus room: standing desk, monitor, office chair, whiteboard on the wall",
+              "candidate_spots": [
+                "under the standing desk",
+                "office chair"
+              ],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F3_N04",
+          "room": "Meeting Room A \u2014 Door Side",
+          "room_type": "meeting_room",
+          "position": {
+            "x": 0,
+            "z": 10
+          },
+          "neighbors": [
+            "F3_N02",
+            "F3_N05"
+          ],
+          "views": [
+            {
+              "id": "F3_N04_v0",
+              "file": "images/F3_N04_v0.jpg",
+              "source": "IMG_8835.JPG",
+              "description": "Meeting room corner toward the whiteboard wall; oval table and office chairs",
+              "candidate_spots": [
+                "office chairs"
+              ],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N04_v1",
+              "file": "images/F3_N04_v1.jpg",
+              "source": "IMG_8836.JPG",
+              "description": "Blank white wall with light switches",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N04_v2",
+              "file": "images/F3_N04_v2.jpg",
+              "source": "IMG_8837.JPG",
+              "description": "Wood door with a 'thanks for using the room' sign",
+              "candidate_spots": [],
+              "clue_surface": "door sign",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N04_v3",
+              "file": "images/F3_N04_v3.jpg",
+              "source": "IMG_8838.JPG",
+              "description": "Wall TV above the oval table; frosted glass wall on the left",
+              "candidate_spots": [
+                "oval table",
+                "office chair"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F3_N05",
+          "room": "Meeting Room A \u2014 Whiteboard Side",
+          "room_type": "meeting_room",
+          "position": {
+            "x": 6,
+            "z": 14
+          },
+          "neighbors": [
+            "F3_N04"
+          ],
+          "views": [
+            {
+              "id": "F3_N05_v0",
+              "file": "images/F3_N05_v0.jpg",
+              "source": "IMG_8839.JPG",
+              "description": "Whiteboard covered in equations with an eraser cloth hanging from it",
+              "candidate_spots": [],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N05_v1",
+              "file": "images/F3_N05_v1.jpg",
+              "source": "IMG_8840.JPG",
+              "description": "Blank grey wall",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N05_v2",
+              "file": "images/F3_N05_v2.jpg",
+              "source": "IMG_8841.JPG",
+              "description": "Looking back toward the door past the oval table",
+              "candidate_spots": [
+                "oval table"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N05_v3",
+              "file": "images/F3_N05_v3.jpg",
+              "source": "IMG_8842.JPG",
+              "description": "Wall TV and a whiteboard of equations; corner between a chair and the whiteboard",
+              "candidate_spots": [
+                "floor in the corner by the whiteboard",
+                "office chair"
+              ],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F3_N06",
+          "room": "Meeting Room B",
+          "room_type": "meeting_room",
+          "position": {
+            "x": 2,
+            "z": -10
+          },
+          "neighbors": [
+            "F3_N02"
+          ],
+          "views": [
+            {
+              "id": "F3_N06_v0",
+              "file": "images/F3_N06_v0.jpg",
+              "source": "IMG_8843.JPG",
+              "description": "Wall TV over an oval table with four chairs and a floor fan",
+              "candidate_spots": [
+                "oval table",
+                "office chairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N06_v1",
+              "file": "images/F3_N06_v1.jpg",
+              "source": "IMG_8844.JPG",
+              "description": "Whiteboard wall next to a frosted glass wall",
+              "candidate_spots": [],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N06_v2",
+              "file": "images/F3_N06_v2.jpg",
+              "source": "IMG_8845.JPG",
+              "description": "Wood door with a 'do not lock the focus room doors' sign",
+              "candidate_spots": [],
+              "clue_surface": "door sign",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N06_v3",
+              "file": "images/F3_N06_v3.jpg",
+              "source": "IMG_8846.JPG",
+              "description": "White wall with an outlet and a power cord",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F3_N07",
+          "room": "Meeting Room C",
+          "room_type": "meeting_room",
+          "position": {
+            "x": 14,
+            "z": -2
+          },
+          "neighbors": [
+            "F3_N02"
+          ],
+          "views": [
+            {
+              "id": "F3_N07_v0",
+              "file": "images/F3_N07_v0.jpg",
+              "source": "IMG_8847.JPG",
+              "description": "Mostly blank whiteboard with a speaker puck",
+              "candidate_spots": [],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N07_v1",
+              "file": "images/F3_N07_v1.jpg",
+              "source": "IMG_8848.JPG",
+              "description": "Frosted glass wall",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N07_v2",
+              "file": "images/F3_N07_v2.jpg",
+              "source": "IMG_8849.JPG",
+              "description": "Door and the corner of the oval table",
+              "candidate_spots": [
+                "oval table"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F3_N07_v3",
+              "file": "images/F3_N07_v3.jpg",
+              "source": "IMG_8850.JPG",
+              "description": "Wall TV over the table; corner where the TV wall meets the whiteboard wall",
+              "candidate_spots": [
+                "floor in the corner by the TV wall",
+                "office chairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        }
+      ],
+      "capture": "UC Berkeley, Oct 15 2026"
+    },
+    {
+      "floor": 4,
+      "name": "Floor 4 \u2014 Commons",
+      "style": "Level 3 commons: kitchen bar and island, long tables, booths, green lounge, window seating",
+      "tower_floor": 30,
+      "nodes": [
+        {
+          "id": "F4_N01",
+          "room": "Commons \u2014 Northeast Entrance",
+          "room_type": "lounge",
+          "position": {
+            "x": -20,
+            "z": 0
+          },
+          "neighbors": [
+            "F4_N02",
+            "F4_N05"
+          ],
+          "views": [
+            {
+              "id": "F4_N01_v0",
+              "file": "images/F4_N01_v0.jpg",
+              "source": "IMG_8853.JPG",
+              "description": "Open commons: kitchen bar on the left, long white tables, wood-paneled booths",
+              "candidate_spots": [
+                "long tables"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N01_v1",
+              "file": "images/F4_N01_v1.jpg",
+              "source": "IMG_8854.JPG",
+              "description": "Window lounge with orange armchairs beside a TV credenza",
+              "candidate_spots": [
+                "orange armchairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N01_v2",
+              "file": "images/F4_N01_v2.jpg",
+              "source": "IMG_8855.JPG",
+              "description": "Glass doors to the 'Level 3 Northeast' corridor",
+              "candidate_spots": [],
+              "clue_surface": "door sign",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N01_v3",
+              "file": "images/F4_N01_v3.jpg",
+              "source": "IMG_8856.JPG",
+              "description": "Wood panel wall with the kitchen counter beyond",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F4_N02",
+          "room": "Commons \u2014 Center",
+          "room_type": "lounge",
+          "position": {
+            "x": -6,
+            "z": 4
+          },
+          "neighbors": [
+            "F4_N01",
+            "F4_N03",
+            "F4_N06"
+          ],
+          "views": [
+            {
+              "id": "F4_N02_v0",
+              "file": "images/F4_N02_v0.jpg",
+              "source": "IMG_8857.JPG",
+              "description": "Booth seating next to a glass door into the corridor",
+              "candidate_spots": [
+                "booth"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N02_v1",
+              "file": "images/F4_N02_v1.jpg",
+              "source": "IMG_8858.JPG",
+              "description": "Window armchairs and long white tables with orange chairs",
+              "candidate_spots": [
+                "long tables",
+                "orange armchairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N02_v2",
+              "file": "images/F4_N02_v2.jpg",
+              "source": "IMG_8859.JPG",
+              "description": "Long tables leading to the kitchen bar and a wall TV",
+              "candidate_spots": [
+                "long tables",
+                "bar stools"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N02_v3",
+              "file": "images/F4_N02_v3.jpg",
+              "source": "IMG_8860.JPG",
+              "description": "Long view down the kitchen bar stools toward the green lounge",
+              "candidate_spots": [
+                "bar stools"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F4_N03",
+          "room": "Commons \u2014 Kitchen Bar",
+          "room_type": "kitchen",
+          "position": {
+            "x": 4,
+            "z": 10
+          },
+          "neighbors": [
+            "F4_N02",
+            "F4_N04"
+          ],
+          "views": [
+            {
+              "id": "F4_N03_v0",
+              "file": "images/F4_N03_v0.jpg",
+              "source": "IMG_8861.JPG",
+              "description": "Kitchen bar with orange stools, green tile backsplash and fridges",
+              "candidate_spots": [
+                "bar stools"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N03_v1",
+              "file": "images/F4_N03_v1.jpg",
+              "source": "IMG_8862.JPG",
+              "description": "Green lounge sofas across the commons",
+              "candidate_spots": [
+                "green sofas"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N03_v2",
+              "file": "images/F4_N03_v2.jpg",
+              "source": "IMG_8863.JPG",
+              "description": "Booth table against a cork wall",
+              "candidate_spots": [
+                "booth table"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N03_v3",
+              "file": "images/F4_N03_v3.jpg",
+              "source": "IMG_8864.JPG",
+              "description": "Booths and tables leading to the windows",
+              "candidate_spots": [
+                "booth tables"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F4_N04",
+          "room": "Commons \u2014 Green Lounge",
+          "room_type": "lounge",
+          "position": {
+            "x": 14,
+            "z": 4
+          },
+          "neighbors": [
+            "F4_N03",
+            "F4_N05"
+          ],
+          "views": [
+            {
+              "id": "F4_N04_v0",
+              "file": "images/F4_N04_v0.jpg",
+              "source": "IMG_8865.JPG",
+              "description": "Green modular sofas and an orange chair in front of a wood-slat wall with a door",
+              "candidate_spots": [
+                "green sofas"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N04_v1",
+              "file": "images/F4_N04_v1.jpg",
+              "source": "IMG_8866.JPG",
+              "description": "White wall and a dark corridor opening",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N04_v2",
+              "file": "images/F4_N04_v2.jpg",
+              "source": "IMG_8867.JPG",
+              "description": "Long view of the kitchen bar and booths",
+              "candidate_spots": [
+                "bar stools"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N04_v3",
+              "file": "images/F4_N04_v3.jpg",
+              "source": "IMG_8868.JPG",
+              "description": "Fridges, a wall TV and a wooden bench behind green sofas",
+              "candidate_spots": [
+                "wooden bench",
+                "green sofas"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F4_N05",
+          "room": "Commons \u2014 Northeast Corner",
+          "room_type": "lounge",
+          "position": {
+            "x": 6,
+            "z": -12
+          },
+          "neighbors": [
+            "F4_N01",
+            "F4_N04",
+            "F4_N06"
+          ],
+          "views": [
+            {
+              "id": "F4_N05_v0",
+              "file": "images/F4_N05_v0.jpg",
+              "source": "IMG_8885.JPG",
+              "description": "Long tables and the kitchen beyond a green sofa; rolling whiteboard with yellow legs",
+              "candidate_spots": [
+                "long tables"
+              ],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N05_v1",
+              "file": "images/F4_N05_v1.jpg",
+              "source": "IMG_8886.JPG",
+              "description": "Green sofas with side tables in front of the fridges",
+              "candidate_spots": [
+                "green sofas"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N05_v2",
+              "file": "images/F4_N05_v2.jpg",
+              "source": "IMG_8887.JPG",
+              "description": "Window corner with orange armchairs and a stacking game",
+              "candidate_spots": [
+                "floor along the wall",
+                "orange armchairs"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N05_v3",
+              "file": "images/F4_N05_v3.jpg",
+              "source": "IMG_8888.JPG",
+              "description": "Glass whiteboard and a rolling whiteboard of math, armchair and side tables",
+              "candidate_spots": [
+                "floor along the wall",
+                "orange armchair"
+              ],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F4_N06",
+          "room": "Commons \u2014 Kitchen Island",
+          "room_type": "kitchen",
+          "position": {
+            "x": -8,
+            "z": -12
+          },
+          "neighbors": [
+            "F4_N02",
+            "F4_N05"
+          ],
+          "views": [
+            {
+              "id": "F4_N06_v0",
+              "file": "images/F4_N06_v0.jpg",
+              "source": "IMG_8889.JPG",
+              "description": "Kitchen island, fridges and rows of long tables",
+              "candidate_spots": [
+                "long tables",
+                "kitchen island"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N06_v1",
+              "file": "images/F4_N06_v1.jpg",
+              "source": "IMG_8890.JPG",
+              "description": "Glass whiteboard by a door, orange armchairs and side tables",
+              "candidate_spots": [
+                "orange armchairs"
+              ],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N06_v2",
+              "file": "images/F4_N06_v2.jpg",
+              "source": "IMG_8891.JPG",
+              "description": "Windows with a foosball table, armchairs and a green sofa",
+              "candidate_spots": [
+                "armchairs",
+                "green sofa"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F4_N06_v3",
+              "file": "images/F4_N06_v3.jpg",
+              "source": "IMG_8892.JPG",
+              "description": "Green sofas facing the long tables and a glass whiteboard",
+              "candidate_spots": [
+                "green sofas"
+              ],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        }
+      ],
+      "capture": "UC Berkeley, Oct 15 2026"
+    },
+    {
+      "floor": 5,
+      "name": "Floor 5 \u2014 Studios",
+      "style": "Level 3 studio classrooms with slatted windows onto the atrium",
+      "tower_floor": 40,
+      "nodes": [
+        {
+          "id": "F5_N01",
+          "room": "Studio A",
+          "room_type": "classroom",
+          "position": {
+            "x": -8,
+            "z": 0
+          },
+          "neighbors": [
+            "F5_N02"
+          ],
+          "views": [
+            {
+              "id": "F5_N01_v0",
+              "file": "images/F5_N01_v0.jpg",
+              "source": "IMG_8870.JPG",
+              "description": "Studio classroom: rows of tables with black chairs, whiteboard at the front",
+              "candidate_spots": [
+                "tables",
+                "chairs"
+              ],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F5_N01_v1",
+              "file": "images/F5_N01_v1.jpg",
+              "source": "IMG_8871.JPG",
+              "description": "Whiteboard and a wood-topped counter along the wall",
+              "candidate_spots": [
+                "counter"
+              ],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F5_N01_v2",
+              "file": "images/F5_N01_v2.jpg",
+              "source": "IMG_8872.JPG",
+              "description": "Open doorway looking out to the commons lounge",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F5_N01_v3",
+              "file": "images/F5_N01_v3.jpg",
+              "source": "IMG_8873.JPG",
+              "description": "Interior window with wood slats looking down into the atrium",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F5_N02",
+          "room": "Studio B",
+          "room_type": "classroom",
+          "position": {
+            "x": 8,
+            "z": 0
+          },
+          "neighbors": [
+            "F5_N01"
+          ],
+          "views": [
+            {
+              "id": "F5_N02_v0",
+              "file": "images/F5_N02_v0.jpg",
+              "source": "IMG_8874.JPG",
+              "description": "Whiteboard with an attention formula above a long bench",
+              "candidate_spots": [
+                "bench"
+              ],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F5_N02_v1",
+              "file": "images/F5_N02_v1.jpg",
+              "source": "IMG_8875.JPG",
+              "description": "Glass door to a corridor, an electrical panel and a keyboard stand",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F5_N02_v2",
+              "file": "images/F5_N02_v2.jpg",
+              "source": "IMG_8876.JPG",
+              "description": "Tables, round caf\u00e9 tables and a front desk with a monitor",
+              "candidate_spots": [
+                "tables"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F5_N02_v3",
+              "file": "images/F5_N02_v3.jpg",
+              "source": "IMG_8877.JPG",
+              "description": "Table of framed photos, a low bench and a whiteboard; slatted window to the atrium",
+              "candidate_spots": [
+                "floor by the bench",
+                "table"
+              ],
+              "clue_surface": "whiteboard",
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        }
+      ],
+      "capture": "UC Berkeley, Oct 15 2026"
+    },
+    {
+      "floor": 6,
+      "name": "Floor 6 \u2014 Atrium",
+      "style": "Atrium level: lime booths, caf\u00e9 tables and a skylight opening",
+      "tower_floor": 50,
+      "nodes": [
+        {
+          "id": "F6_N01",
+          "room": "Atrium \u2014 Lime Booths",
+          "room_type": "lounge",
+          "position": {
+            "x": -8,
+            "z": 0
+          },
+          "neighbors": [
+            "F6_N02"
+          ],
+          "views": [
+            {
+              "id": "F6_N01_v0",
+              "file": "images/F6_N01_v0.jpg",
+              "source": "IMG_8893.JPG",
+              "description": "Lime-green booths and round white tables on striped green carpet",
+              "candidate_spots": [
+                "round tables",
+                "booths"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F6_N01_v1",
+              "file": "images/F6_N01_v1.jpg",
+              "source": "IMG_8894.JPG",
+              "description": "Window counter with yellow stools",
+              "candidate_spots": [
+                "window counter"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F6_N01_v2",
+              "file": "images/F6_N01_v2.jpg",
+              "source": "IMG_8895.JPG",
+              "description": "Curved walkway along the glass wall",
+              "candidate_spots": [],
+              "clue_surface": null,
+              "low_information": true,
+              "people_visible": false
+            },
+            {
+              "id": "F6_N01_v3",
+              "file": "images/F6_N01_v3.jpg",
+              "source": "IMG_8896.JPG",
+              "description": "Railing around the atrium skylight opening with a caf\u00e9 table",
+              "candidate_spots": [
+                "caf\u00e9 table"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        },
+        {
+          "id": "F6_N02",
+          "room": "Atrium \u2014 Overlook",
+          "room_type": "lounge",
+          "position": {
+            "x": 8,
+            "z": 0
+          },
+          "neighbors": [
+            "F6_N01"
+          ],
+          "views": [
+            {
+              "id": "F6_N02_v0",
+              "file": "images/F6_N02_v0.jpg",
+              "source": "IMG_8897.JPG",
+              "description": "Round wood table, white chairs and lime booths",
+              "candidate_spots": [
+                "round table",
+                "booths"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F6_N02_v1",
+              "file": "images/F6_N02_v1.jpg",
+              "source": "IMG_8898.JPG",
+              "description": "Column beside curved lime booth seating",
+              "candidate_spots": [
+                "booth"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F6_N02_v2",
+              "file": "images/F6_N02_v2.jpg",
+              "source": "IMG_8899.JPG",
+              "description": "White caf\u00e9 table by the window counter",
+              "candidate_spots": [
+                "caf\u00e9 table"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            },
+            {
+              "id": "F6_N02_v3",
+              "file": "images/F6_N02_v3.jpg",
+              "source": "IMG_8900.JPG",
+              "description": "Large round wood table overlooking the atrium skylight",
+              "candidate_spots": [
+                "round table"
+              ],
+              "clue_surface": null,
+              "low_information": false,
+              "people_visible": false
+            }
+          ]
+        }
+      ],
+      "capture": "UC Berkeley, Oct 15 2026"
+    }
+  ],
+  "vertical_links": [
+    {
+      "from": "F1_N01",
+      "to": "F2_N01",
+      "via": "stairs/elevator"
+    },
+    {
+      "from": "F1_N01",
+      "to": "F3_N01",
+      "via": "campus walk"
+    },
+    {
+      "from": "F3_N01",
+      "to": "F4_N01",
+      "via": "glass doors"
+    },
+    {
+      "from": "F4_N04",
+      "to": "F5_N01",
+      "via": "studio door"
+    },
+    {
+      "from": "F5_N02",
+      "to": "F6_N01",
+      "via": "stairs to the atrium"
+    }
+  ],
+  "tower_floor_note": "Which floor of the 61-floor tower model each captured floor is shown on (1-based)."
+}
