@@ -256,7 +256,10 @@
 
     <hr class="rule">
     <h2>Summary</h2>
-    <p class="sec-desc">All metrics for the current filter. Process = share of steps the clues justified; efficiency = shortest possible cost ÷ cost spent.</p>
+    <p class="sec-desc">All metrics for the current filter. Process = share of steps the clues justified; efficiency = shortest possible cost ÷ cost spent.
+    Tokens and cost include each harness's own prompt: the Codex CLI and Antigravity add a large system prompt every turn, so their
+    rows measure model + harness. Subscription runs (Claude Code, Codex CLI, Antigravity) are priced at public API list prices;
+    API runs use the provider's billed cost; Roboflow-hosted models bill Roboflow credits and show no per-run cost.</p>
     <div id="chart-table"></div>
 
     <hr class="rule">
@@ -295,7 +298,9 @@ const Results = (() => {
   const esc = (t) => String(t ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
   const visibleRun = (r) => r.perception === f.perc && (r.agent.kind !== 'mock' || DEMO || f.mock);
-  const taskCount = (d) => new Set(EVAL.runs.filter((r) => d === 'all' || r.difficulty === d).map((r) => r.task_id)).size;
+  // Tasks the shown agents actually ran (not every task in the frozen set).
+  const taskCount = (d, p) => new Set(EVAL.runs.filter((r) => (d === 'all' || r.difficulty === d) && r.perception === p &&
+    (r.agent.kind !== 'mock' || f.mock)).map((r) => r.task_id)).size;
 
   function seg(el, key, options, cls) {
     el.innerHTML = options.map(([v, label, n]) =>
@@ -310,6 +315,7 @@ const Results = (() => {
     };
   }
   const diffNav = document.getElementById('f-diff');
+  if (DIFFS.length < 2) { diffNav.hidden = true; f.diff = 'all'; }
   diffNav.innerHTML = [['all', 'Overall'], ...DIFFS.map((d) => [d, DIFF_LABEL(d)])]
     .map(([v, l], i) => `${i === 1 ? '<span class="sep">|</span>' : ''}<button type="button" data-v="${v}" aria-pressed="${f.diff === v}">${l}</button>`).join('');
   diffNav.onclick = (e) => {
@@ -373,9 +379,12 @@ const Results = (() => {
     const rows = board
       .filter((r) => r.difficulty === f.diff && r.perception === f.perc && (f.mock || r.kind !== 'mock'))
       .sort((a, b) => (f.view === 'reward' ? b.reward - a.reward : b.success - a.success));
-    const nTasks = taskCount(f.diff);
+    const nTasks = taskCount(f.diff, f.perc);
+    const shownDiffs = f.diff === 'all' ? DIFFS : [f.diff];
+    const smaller = [...new Set(rows.filter((r) => r.kind !== 'scripted' && r.n < nTasks).map((r) => r.n))].sort((a, b) => a - b);
     document.getElementById('lb-desc').textContent =
-      `Share of tasks where the agent reported the owner's backpack (${nTasks} frozen tasks${f.diff === 'all' ? '' : `, ${DIFF_LABEL(f.diff).toLowerCase()}`}). ` +
+      `Share of tasks where the agent reported the owner's backpack, over ${nTasks} frozen ${shownDiffs.map(DIFF_LABEL).join(' + ').toLowerCase()} tasks. ` +
+      (smaller.length ? `Rows with n < ${nTasks} ran only the first ${smaller.join(' / ')} of the same task list, so compare them with care. ` : '') +
       'Error bars are 95% bootstrap intervals. Reward adds efficiency and reasoning quality; run-outcome shows how runs ended.';
     const main = document.getElementById('chart-main');
     const empty = '<div class="empty">No runs match these filters.</div>';
@@ -385,7 +394,7 @@ const Results = (() => {
       value: f.view === 'reward' ? 'reward' : 'success', ci: f.view === 'reward' ? 'reward_ci' : 'success_ci',
       fmt: f.view === 'reward' ? (v) => v.toFixed(3) : C.pct, min: f.view === 'reward' ? -0.25 : 0, max: 1, onClick: goReplayAgent,
     });
-    document.getElementById('pareto-title').textContent = `${f.diff === 'all' ? 'Overall' : f.diff} pass rate vs ${X_LABEL[f.x]}`;
+    document.getElementById('pareto-title').textContent = `${f.diff === 'all' ? 'Overall' : DIFF_LABEL(f.diff)} pass rate vs ${X_LABEL[f.x]}`;
     if (rows.length) C.pareto(document.getElementById('chart-pareto'), rows, { x: f.x, y: 'success', onClick: goReplayAgent });
     else document.getElementById('chart-pareto').innerHTML = empty;
     if (rows.length) C.table(document.getElementById('chart-table'), rows, { onClick: goReplayAgent });
@@ -394,10 +403,10 @@ const Results = (() => {
     // Checkpoint chart + example evals share the same example tasks.
     const tasks = exampleTasks();
     if (!tasks.find((t) => t.id === f.task)) f.task = tasks[0]?.id || null;
-    seg(document.getElementById('f-task'), 'task', tasks.map((t) => [t.id, `${t.difficulty} · ${t.id.slice(0, 6)}`]));
+    seg(document.getElementById('f-task'), 'task', tasks.map((t) => [t.id, `${DIFF_LABEL(t.difficulty)} · ${t.id.slice(0, 6)}`]));
     const cur = tasks.find((t) => t.id === f.task);
     document.getElementById('cp-meta').textContent = cur
-      ? `${cur.difficulty} task ${cur.id} · bag in ${roomName(cur.runs[0].answer.target.node)} · one run per agent · hover a line, click to see its steps` : '';
+      ? `${DIFF_LABEL(cur.difficulty)} task ${cur.id} · bag in ${roomName(cur.runs[0].answer.target.node)} · one run per agent · hover a line, click to see its steps` : '';
     C.checkpoints(document.getElementById('chart-cp'), cur ? cur.runs : [], { onClick: goReplayRun, roomName });
     renderExamples(tasks);
   }
@@ -424,7 +433,7 @@ const Results = (() => {
       ].join('\n');
       const runs = [...t.runs].sort((x, y) => y.info.reward - x.info.reward);
       return `<article class="ex-card" data-i="${i}">
-        <div class="ex-meta"><span class="bench">${t.difficulty}</span><span><b>${t.id}</b></span>
+        <div class="ex-meta"><span class="bench">${DIFF_LABEL(t.difficulty)}</span><span><b>${t.id}</b></span>
           <span>${floors} floors · budget ${r0.info.budget}</span>
           <span class="badge ${pass >= 50 ? 'high' : 'low'}">${pass}% pass</span></div>
         <p class="ex-body">Find ${esc(r0.task.match(/^(.+?) \(/)?.[1] || 'the owner')}'s ${esc(a.target.description)}.

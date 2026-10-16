@@ -59,6 +59,8 @@ def aggregate(runs):
             "cost_per_success": (sum(cost) / n_succ) if n_succ else None,
             "outcomes": {o: c for o, c in Counter(i["outcome"] for i in info).items()},
         })
+        if a.get("billing") == "roboflow_credits" and a["kind"] == "model":
+            rows[-1]["cost_per_run"] = rows[-1]["cost_per_success"] = None   # billed in credits; no per-run cost reported
     return rows
 
 
@@ -119,8 +121,14 @@ def main():
         m = models.get(r["agent"]["id"])
         if m:
             r["agent"]["label"] = m["label"]      # current display name, even for runs recorded under an older one
+            r["agent"]["harness"] = m.get("harness", r["agent"].get("harness"))
+            r["agent"]["billing"] = m.get("billing", r["agent"].get("billing"))
         if m and m.get("billing") == "subscription" and not r["usage"].get("cost_usd"):
             r["usage"]["cost_usd"] = list_price(r, m) or 0.0
+    # Only difficulties some real model ran: a baseline-only difficulty would make "Overall" rows incomparable.
+    model_diffs = {r["difficulty"] for r in runs if r["agent"].get("kind") == "model"}
+    if model_diffs:
+        runs = [r for r in runs if r["difficulty"] in model_diffs]
     bags_path = ROOT / "data" / "bag_labels.json"
     bags = json.loads(bags_path.read_text()) if bags_path.exists() else {"placements": []}
     data = {"building": building, "bags": bags, "leaderboard": aggregate(runs), "runs": [slim(r) for r in runs],

@@ -8,8 +8,12 @@
       of: ['decoy', 'bystander_bag', 'not_a_bag', 'wrong_location', 'right_room_wrong_view'] },
     { key: 'gave_up',      label: 'Gave up',       color: '#7a7672', soft: '#b3b0ac', of: ['gave_up'] },
     { key: 'budget',       label: 'Out of budget', color: '#d38b3c', soft: '#e7c19a', of: ['budget_exhausted'] },
+    { key: 'turns',        label: 'Turn limit',    color: '#8e7cc3', soft: '#c3b9e0', of: ['turn_limit'] },
     { key: 'disqualified', label: 'Disqualified',  color: '#2f2c29', soft: '#8d8984', hatch: true, of: ['disqualified'] },
   ];
+  // Any outcome not named above still gets a segment, so every bar sums to 100%.
+  const KNOWN = new Set(GROUPS.flatMap((g) => g.of));
+  GROUPS.push({ key: 'other', label: 'Other', color: '#b9b4ad', soft: '#dcd8d2', other: true, of: [] });
   const SUB_LABEL = {
     decoy: 'look-alike decoy', bystander_bag: "someone else's bag", not_a_bag: 'not a bag',
     wrong_location: 'wrong place', right_room_wrong_view: 'right room, wrong view',
@@ -20,8 +24,8 @@
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const colorFor = (r) => r.color || SCRIPTED[r.agent] || '#8a847b';
   const agentColor = (a) => a.color || SCRIPTED[a.id] || '#8a847b';
-  const sub = (r) => r.kind === 'scripted' ? 'scripted reference' : r.kind === 'mock' ? 'mock pipeline test'
-    : r.kind === 'demo' ? r.harness : '';
+  const sub = (r) => (r.kind === 'scripted' ? 'scripted reference' : r.kind === 'mock' ? 'mock pipeline test'
+    : r.harness || '') + (r.n != null ? ` · n=${r.n}` : '');
   const nameCell = (r) => `<span class="bar-label"><b>${esc(r.label)}</b><small>${esc(sub(r))}</small></span>`;
   const gridLines = () => `<div class="bars-grid" aria-hidden="true">${[0, 25, 50, 75, 100].map((p) => `<span style="left:${p}%"></span>`).join('')}</div>`;
 
@@ -77,7 +81,10 @@
 
   /* Run outcome: 100% stacked bars; hovering a row fades the others. */
   function stacked(el, rows, _order, { onClick } = {}) {
-    const counts = (r, g) => g.of.reduce((s, o) => s + (r.outcomes[o] || 0), 0);
+    const counts = (r, g) => g.other
+      ? Object.entries(r.outcomes).reduce((s, [o, n]) => s + (KNOWN.has(o) ? 0 : n), 0)
+      : g.of.reduce((s, o) => s + (r.outcomes[o] || 0), 0);
+    const used = GROUPS.filter((g) => g.key !== 'other' && g.key !== 'disqualified' || rows.some((r) => counts(r, g)));
     el.innerHTML = `<div class="lb outcome">${rows.map((r, i) => {
       const segs = GROUPS.map((g) => {
         const n = counts(r, g);
@@ -87,14 +94,14 @@
       }).join('');
       return `<div class="lb-row${onClick ? ' clickable' : ''}" data-i="${i}"><span class="lb-track stack">${segs}</span>${nameCell(r)}</div>`;
     }).join('')}<div class="lb-grid">${gridLines()}</div></div>
-    <div class="legend">${GROUPS.map((g) => `<span><i class="sq${g.hatch ? ' hatch' : ''}" style="background-color:${g.color}"></i>${g.label}</span>`).join('')}</div>`;
+    <div class="legend">${used.map((g) => `<span><i class="sq${g.hatch ? ' hatch' : ''}" style="background-color:${g.color}"></i>${g.label}</span>`).join('')}</div>`;
     el.querySelectorAll('.lb-row').forEach((row) => {
       const r = rows[+row.dataset.i];
       bindTip(row, () => {
         let html = `<div class="tip-title">${tipRow(GROUPS[0].color, `<b>${esc(r.label)}</b>`)}</div>`;
         for (const g of GROUPS) {
           const n = counts(r, g);
-          if (!n && g.key === 'disqualified') continue;
+          if (!n && (g.key === 'disqualified' || g.key === 'other')) continue;
           html += tipRow(g.color, `${g.label}: ${n} (${Math.round((n / r.n) * 100)}%)`, g.hatch);
           if (g.key === 'incorrect' && n) {
             html += g.of.filter((o) => r.outcomes[o]).map((o) => `<div class="tip-row sub">${SUB_LABEL[o]}: ${r.outcomes[o]}</div>`).join('');
@@ -108,6 +115,8 @@
 
   /* Pass rate vs cost / tokens / turns, with the Pareto frontier. */
   function pareto(el, rows, { x = 'cost_per_run', y = 'success', onClick } = {}) {
+    rows = rows.filter((r) => r[x] != null);
+    if (!rows.length) { el.innerHTML = '<div class="empty">No runs with this measure.</div>'; return; }
     const W = 760, H = 420, m = { l: 56, r: 24, t: 20, b: 48 };
     const xs = rows.map((r) => r[x] || 0);
     const xMax = Math.max(...xs, x === 'cost_per_run' ? 0.01 : 1) * 1.15;
@@ -117,7 +126,7 @@
     const xLabel = { cost_per_run: 'Avg cost (USD / run)', tokens: 'Avg tokens / run', turns: 'Avg turns / run' }[x];
     const sorted = rows.map((r) => ({ r, x: r[x] || 0, y: r[y] })).sort((a, b) => a.x - b.x || b.y - a.y);
     const front = [];
-    for (const p of sorted) if (!front.length || p.y > front[front.length - 1].y) front.push(p);
+    for (const p of sorted) if (p.y > 0 && p.r.kind !== 'scripted' && (!front.length || p.y > front[front.length - 1].y)) front.push(p);
     let svg = `<svg viewBox="0 0 ${W} ${H}" class="pareto" role="img" aria-label="Pass rate versus ${esc(xLabel)}">`;
     for (let i = 0; i <= 4; i++) {
       const yy = sy(i / 4);
@@ -165,7 +174,7 @@
     { key: 'floor',   label: 'Floor',   long: 'Reached the floor where the bag was' },
     { key: 'room',    label: 'Room',    long: 'Walked into the room where the bag was' },
     { key: 'search',  label: 'Search',  long: 'Searched that room' },
-    { key: 'inspect', label: 'Inspect', long: "Inspected the owner's bag up close" },
+    { key: 'inspect', label: 'Verify',  long: "Inspected or zoomed into the owner's bag (the grader's rule)" },
   ];
 
   function checkpointProgress(run) {
@@ -179,17 +188,21 @@
       floor: nodes.some((n) => floorOf(n) === floorOf(target.node)),
       room: tr.some((s) => (s.tool === 'go_to' && !s.error && s.node === target.node) || (s.tool === 'start' && s.node === target.node)),
       search: tr.some((s) => s.tool === 'search' && !s.error && s.node === target.node),
-      inspect: tr.some((s) => s.tool === 'inspect' && !s.error && (a.bag_objects || {})[s.args?.object] === 'target'),
+      inspect: tr.some((s) => !s.error && ((s.tool === 'inspect' && (a.bag_objects || {})[s.args?.object] === 'target') ||
+        (s.tool === 'zoom' && (target.views || [target.view]).includes(s.args?.view)))),
     };
+    const skipped = CHECKPOINTS.filter((c) => !met[c.key]);
+    if (run.info.success) return { met, skipped, failAt: CHECKPOINTS.length + 1 };
     const failAt = CHECKPOINTS.findIndex((c) => !met[c.key]);
-    return { met, failAt: failAt >= 0 ? failAt : run.info.success ? CHECKPOINTS.length + 1 : CHECKPOINTS.length };
+    return { met, skipped, failAt: failAt >= 0 ? failAt : CHECKPOINTS.length };
   }
 
   function checkpoints(el, runs, { onClick, roomName = (n) => n } = {}) {
     if (!runs.length) { el.innerHTML = '<div class="empty">No runs for this task yet.</div>'; return; }
-    const W = 1000, x0 = 70, y0 = 92, rowH = 26, dropTop = 150;
-    const cols = CHECKPOINTS.map((_, i) => 165 + i * 125);
-    const xGrader = 165 + CHECKPOINTS.length * 125, xPass = xGrader + 92;
+    const step = 150, W = 1190, x0 = 70, y0 = 92, rowH = 26, dropTop = 150;
+    const short = (s) => { s = s.replace(/ \(.*\)$/, '').replace(' (mock)', ''); return s.length > 18 ? `${s.slice(0, 17)}…` : s; };
+    const cols = CHECKPOINTS.map((_, i) => 165 + i * step);
+    const xGrader = 165 + CHECKPOINTS.length * step, xPass = xGrader + 135;
     const stops = [...cols, xGrader, xPass];
     const prog = runs.map((r) => ({ r, ...checkpointProgress(r) }));
     const byStop = stops.map(() => []);
@@ -223,11 +236,11 @@
       const bend = isPass ? xs - 6 : xs - 34;
       const c = agentColor(p.r.agent);
       paths.push(`<path d="M${x0},${y0 + jitter} H${bend} C${bend + 26},${y0 + jitter} ${xd - 8},${y0 + 30} ${xd},${yd}" class="cp-line" stroke="${c}" data-i="${i}"/>`);
-      const fail = !isPass;
+      const fail = !isPass || p.skipped.length > 0;   // hollow = failed, or passed without every checkpoint
       dots.push(`<g class="cp-dot" data-i="${i}">${fail
         ? `<circle cx="${xd}" cy="${yd}" r="7" fill="#fff" stroke="${c}" stroke-width="2.2"/><circle cx="${xd}" cy="${yd}" r="2.6" fill="${c}"/>`
         : `<circle cx="${xd}" cy="${yd}" r="6.5" fill="${c}"/>`}
-        <text x="${xd + 13}" y="${yd + 4}" class="cp-label" fill="${c}">${esc(p.r.agent.label.replace(' (mock)', ''))}</text></g>`);
+        <text x="${xd + 13}" y="${yd + 4}" class="cp-label" fill="${c}">${esc(short(p.r.agent.label))}</text></g>`);
     });
     svg += paths.join('');
     svg += `<circle cx="${x0}" cy="${y0}" r="14" class="cp-start-halo"/><circle cx="${x0}" cy="${y0}" r="8" class="cp-start"/>
@@ -240,8 +253,9 @@
       const why = p.failAt < CHECKPOINTS.length ? {
         clues: 'moved before reading any clue', floor: `never reached floor ${t.node.slice(1, 2)}`,
         room: `never went to ${room}`, search: `reached ${room} but never searched it`,
-        inspect: `searched ${room} but never inspected the right bag`,
-      }[CHECKPOINTS[p.failAt].key] : p.failAt === CHECKPOINTS.length ? `reached the bag, then ${p.r.info.outcome.replace(/_/g, ' ')}` : 'found the right bag';
+        inspect: `searched ${room} but never inspected or zoomed into the right bag`,
+      }[CHECKPOINTS[p.failAt].key] : p.failAt === CHECKPOINTS.length ? `reached the bag, then ${p.r.info.outcome.replace(/_/g, ' ')}`
+        : p.skipped.length ? `found the right bag without: ${p.skipped.map((c) => c.label.toLowerCase()).join(', ')}` : 'found the right bag';
       return `<div class="tip-title">${tipRow(agentColor(p.r.agent), `<b>${esc(p.r.agent.label)}</b>`)}</div>
         <div class="tip-row">${p.failAt <= CHECKPOINTS.length ? `First failure: ${p.failAt < CHECKPOINTS.length ? `CP${p.failAt + 1} · ${CHECKPOINTS[p.failAt].label}` : 'Grader'}` : 'Passed'}</div>
         <div class="tip-row muted">${esc(why)}</div><div class="tip-row muted">Reward ${(+p.r.info.reward).toFixed(2)} · ${p.r.trajectory.length - 1} steps</div>`;
