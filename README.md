@@ -17,7 +17,7 @@ index.html    benchmark page: leaderboard, Pareto, checkpoint chart, example run
 
 ## Campus suite (the benchmark)
 
-Floors 3–6 are a real Berkeley capture with one black Databricks backpack photographed in 11 places, in four
+Floors 3–6 are a real photos capture with one black backpack photographed in 11 places, in four
 configurations (plain / cap / keychain / cap + keychain). `env/campus.py` builds each task backwards from one of
 those bags and plants clues so exactly one bag survives: split variant facts, a "had it → noticed it gone" window,
 **restricted floors** (look-alikes on floors the owner's badge can't open), coworker claims, early sightings,
@@ -42,7 +42,7 @@ python3 scripts/build_ui_data.py               # bundle results for the UI
 python3 -m http.server 8000                    # then open http://localhost:8000
 ```
 
-## Running real models (≤ $10)
+## Running real models
 
 1. `cp .env.example .env` and add `OPENROUTER_API_KEY` (one key covers GPT, Claude, Gemini, Kimi).
 2. In `config/models.json`, set each model's router slug and its per-million-token prices.
