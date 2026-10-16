@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>roboflow.bench</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --line: rgba(0, 0, 0, 0.09);
+    --muted: #7d776f;
+    --panel: rgba(250, 249, 247, 0.95);
+    --head-h: 52px;
+    --good: #3f8f5f;
+    --bad: #c0453a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #fff; color: #111827; -webkit-font-smoothing: antialiased; }
+  button { font: inherit; color: inherit; }
+  button:focus-visible, input:focus-visible { outline: 2px solid #ff6b35; outline-offset: 1px; }
+
+  header {
+    position: fixed; z-index: 10; top: 0; left: 0; right: 0; height: var(--head-h);
+    display: flex; align-items: center; gap: 16px; padding: 0 16px;
+    padding-top: env(safe-area-inset-top);
+    background: var(--panel); border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  }
+  .brand { font: 700 15px/1 "Iowan Old Style", iowan-old-style-bt, Georgia, serif; letter-spacing: -0.01em; white-space: nowrap; color: #111827; }
+  .brand small { color: #6b7280; font-weight: 400; font-size: 15px; }
+  header .meta { margin-left: auto; color: var(--muted); font: 11.5px ui-monospace, "SF Mono", Menlo, monospace; white-space: nowrap; }
+  /* Results view — sized after benchmarks.bio */
+  #results {
+    position: fixed; z-index: 8; inset: var(--head-h) 0 0 0; overflow-y: auto; background: #fff;
+    --serif: "Iowan Old Style", iowan-old-style-bt, Georgia, Cambria, Times, serif;
+    --mono: "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    --ink: #111827; --ink2: #4b5563; --ink3: #6b7280; --ink4: #9ca3af; --rule: #e5e7eb; --rule2: #f3f4f6;
+    font: 16px/24px var(--serif); color: var(--ink);
+  }
+  .rx { max-width: 1036px; margin: 0 auto; padding: 36px 16px 96px; }
+  .rx h1 { font: 700 28px/35px var(--serif); margin: 0 0 12px; letter-spacing: -0.01em; }
+  .rx .intro { font: 14px/22px var(--serif); max-width: 720px; margin: 0 0 22px; }
+  .sec-tabs { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; margin: 0 0 22px; font: 11px/16px var(--mono); letter-spacing: 0.06em; text-transform: uppercase; }
+  .sec-tabs button { appearance: none; border: 0; background: none; padding: 2px 0; cursor: pointer; color: var(--ink4); font: inherit; letter-spacing: inherit; text-transform: inherit; border-bottom: 1.5px solid transparent; }
+  .sec-tabs button[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+  .sec-tabs .sep { color: var(--rule); }
+  .sec-title { font: 700 14px/20px var(--serif); margin: 0; }
+  .sec-desc { font: 13px/20px var(--serif); color: var(--ink2); max-width: 720px; margin: 4px 0 16px; }
+  .sample-banner { display: none; margin: 0 0 14px; padding: 8px 12px; border: 1px dashed #d08b80; border-radius: 6px; color: #a8473c; font: 11px/16px var(--mono); }
+  body.demo .sample-banner { display: block; }
+  details.filter { border-top: 1px solid var(--rule2); border-bottom: 1px solid var(--rule2); }
+  details.filter summary { list-style: none; cursor: pointer; padding: 10px 0; display: flex; justify-content: space-between; align-items: center; font: 11px/16px var(--mono); color: var(--ink2); }
+  details.filter summary::-webkit-details-marker { display: none; }
+  details.filter summary::after { content: ""; width: 5px; height: 5px; border-right: 1.2px solid var(--ink2); border-bottom: 1.2px solid var(--ink2); transform: rotate(45deg) translate(-2px, -2px); }
+  details.filter[open] summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+  .filter-body { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; padding: 0 0 12px; }
+  .assess { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--rule2); flex-wrap: wrap; }
+  .f-label { font: 11px/16px var(--mono); color: var(--ink2); min-width: 76px; }
+  .chip-group { display: inline-flex; flex-wrap: wrap; }
+  .chip-group button {
+    appearance: none; background: #fff; color: var(--ink2); border: 1px solid var(--rule); margin-left: -1px;
+    padding: 3px 9px; font: 500 11px/16px var(--mono); cursor: pointer;
+  }
+  .chip-group button:first-child { border-radius: 5px 0 0 5px; margin-left: 0; }
+  .chip-group button:last-child { border-radius: 0 5px 5px 0; }
+  .chip-group button span { color: var(--ink4); font-weight: 400; }
+  .chip-group button[aria-pressed="true"] { border-color: var(--ink); color: var(--ink); position: relative; z-index: 1; }
+  .chip-check { font: 11px/16px var(--mono); color: var(--ink2); display: inline-flex; gap: 6px; align-items: center; }
+  .view-toggle { display: inline-flex; padding: 3px; border: 1px solid var(--rule); border-radius: 6px; margin: 20px 0 16px; }
+  .view-toggle button { appearance: none; border: 0; background: transparent; padding: 3px 10px; border-radius: 4px; font: 12px/18px var(--mono); color: var(--ink3); cursor: pointer; }
+  .view-toggle button[aria-pressed="true"] { background: var(--rule2); color: var(--ink); }
+  .mono-label { font: 11px/16px var(--mono); color: var(--ink2); letter-spacing: 0.05em; text-transform: uppercase; margin: 26px 0 8px; }
+  .chip-group.toggle-sm button { border-color: transparent; border-radius: 4px !important; margin: 0; background: transparent; }
+  .chip-group.toggle-sm { border: 1px solid var(--rule); border-radius: 6px; padding: 2px; }
+  .chip-group.toggle-sm button[aria-pressed="true"] { background: var(--rule2); border-color: transparent; }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 36px 0 28px; }
+  .empty { color: var(--ink3); padding: 20px 0; font: 11px var(--mono); }
+  .rx h2 { font: 700 16px/24px var(--serif); margin: 0; }
+  .rx h2 + .sec-desc { margin-top: 2px; }
+
+  /* Leaderboard bars (rows 30px, thin bars) */
+  .lb { position: relative; display: grid; padding: 2px 0; }
+  .lb-row { display: grid; grid-template-columns: 52px 1fr 132px; gap: 4px; align-items: center; height: 30px; position: relative; z-index: 1; transition: opacity 0.12s; }
+  .lb.outcome .lb-row { grid-template-columns: 1fr 132px; gap: 12px; }
+  .lb-row.clickable { cursor: pointer; }
+  .lb:hover .lb-row { opacity: 0.45; }
+  .lb:hover .lb-row:hover, .lb.outcome:hover .lb-row { opacity: 1; }
+  .lb-val { font: 12px/18px var(--mono); font-variant-numeric: tabular-nums; }
+  .lb-track { position: relative; height: 10px; margin: 0 4px; }
+  .lb-fill { position: absolute; top: 0; bottom: 0; border-radius: 5px; }
+  .zero { position: absolute; top: -5px; bottom: -5px; border-left: 1px dashed #c7c3bd; }
+  .whisker { position: absolute; top: 50%; height: 0; border-top: 1px solid #4b5563; }
+  .whisker::before, .whisker::after { content: ""; position: absolute; top: -4.5px; height: 9px; border-left: 1px solid #4b5563; }
+  .whisker::before { left: 0; } .whisker::after { right: 0; }
+  .lb-track.stack { display: flex; border-radius: 6px; overflow: hidden; height: 13px; margin: 0; }
+  .seg { display: grid; place-items: center; color: #fff; font: 9px/1 var(--mono); min-width: 0; background-color: var(--s); transition: background-color 0.12s; }
+  .lb.outcome .lb-row:hover .seg { background-color: var(--c); }
+  .hatch { background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.32) 0 1.5px, transparent 1.5px 4.5px); }
+  .bar-label { text-align: right; line-height: 1.15; min-width: 0; }
+  .bar-label b { font: 400 12px/15px var(--mono); display: block; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar-label small { font: 9px/11px var(--mono); color: var(--ink3); display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lb-grid { position: absolute; inset: 0 140px 0 60px; z-index: 0; pointer-events: none; }
+  .lb.outcome .lb-grid { left: 0; right: 144px; }
+  .bars-grid { position: absolute; inset: 0; }
+  .bars-grid span { position: absolute; top: 0; bottom: 0; border-left: 1px solid var(--rule2); }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 12px; color: var(--ink2); font: 10.5px/16px var(--mono); }
+  .sq { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; vertical-align: -0.5px; }
+  .chart-tip {
+    position: fixed; z-index: 30; pointer-events: none; opacity: 0; transition: opacity 0.1s;
+    background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 12px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.10); font: 11.5px/1.75 "JetBrains Mono", SFMono-Regular, Menlo, monospace; max-width: 340px; color: #111827;
+  }
+  .chart-tip.show { opacity: 1; }
+  .chart-tip .tip-row.sub { padding-left: 16px; color: #6b7280; font-size: 10.5px; line-height: 1.6; }
+  .chart-tip .tip-row.muted { color: #6b7280; }
+
+  /* Pareto */
+  .pareto { width: 100%; height: auto; display: block; }
+  .pareto .gridline { stroke: #eceef1; stroke-dasharray: 3 4; }
+  .pareto .axisline { stroke: #6b7280; }
+  .pareto .axis { font: 10px var(--mono); fill: #6b7280; }
+  .pareto .axis-title { font: 11px var(--mono); fill: #374151; }
+  .pareto .frontier { fill: none; stroke: #9a96a1; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .pareto .pt { cursor: pointer; }
+  .pareto .pt circle { r: 5; stroke-width: 2; }
+  .pareto .pt-label { font: 600 10px var(--mono); }
+
+  /* First checkpoint failure */
+  .cp-card { background: #fafafa; border: 1px solid #eeeeee; border-radius: 10px; padding: 18px 22px 12px; margin-top: 30px; }
+  .cp-card .cp-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+  .cp-card h3 { font: 700 13px/18px var(--mono); margin: 0; color: var(--ink); }
+  .cp-card .cp-meta { font: 10.5px var(--mono); color: var(--ink3); }
+  .cp-svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .cp-head { font: 600 11px var(--mono); fill: #3f8f5f; letter-spacing: 0.08em; }
+  .cp-sub { font: 9.5px var(--mono); fill: #6b7280; }
+  .cp-tick { stroke: #8cc3a0; stroke-width: 1.5; }
+  .cp-tick.strong { stroke: #3f8f5f; stroke-width: 2; }
+  .cp-ring { fill: none; stroke: #3f8f5f; stroke-width: 1.8; }
+  .cp-pass-count { font: 700 11px var(--mono); fill: #c0453a; }
+  .cp-pass-halo { fill: none; stroke: #8cc3a0; stroke-dasharray: 3 3; }
+  .cp-start { fill: #3f8f5f; } .cp-start-halo { fill: #3f8f5f; opacity: 0.15; }
+  .cp-diamond { fill: #3f8f5f; }
+  .cp-zone { fill: #f9ecea; }
+  .cp-line { fill: none; stroke-width: 2.2; opacity: 0.85; transition: opacity 0.12s; cursor: pointer; }
+  .cp-dot { cursor: pointer; transition: opacity 0.12s; }
+  .cp-label { font: 500 10px var(--mono); }
+  .cp-svg.focus .cp-line, .cp-svg.focus .cp-dot { opacity: 0.15; }
+  .cp-svg.focus .on { opacity: 1; }
+
+  /* Example evals */
+  .ex-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .ex-count { font: 10px var(--mono); color: var(--ink4); letter-spacing: 0.05em; text-transform: uppercase; }
+  .ex-card { border: 1px solid var(--rule); border-radius: 8px; padding: 12px 16px 10px; margin: 10px 0 0; }
+  .ex-meta { display: grid; grid-template-columns: auto 1fr auto auto; gap: 14px; align-items: center; font: 10.5px/16px var(--mono); color: var(--ink3); }
+  .ex-meta .bench { color: var(--ink4); font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .ex-meta b { color: var(--ink); font-weight: 600; }
+  .badge { font: 600 9px/14px var(--mono); padding: 1px 6px; border-radius: 4px; border: 1px solid; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+  .badge.low { color: #c0453a; border-color: #f0c6c0; background: #fdf3f2; }
+  .badge.high { color: #3f8f5f; border-color: #bfdcc9; background: #f2f9f4; }
+  .ex-body { font: 13px/20px var(--serif); margin: 8px 0 4px; max-width: 720px; }
+  .ex-foot { display: flex; justify-content: flex-end; }
+  .ex-foot button { appearance: none; border: 1px solid var(--rule); background: #fff; border-radius: 5px; padding: 2px 8px; font: 10.5px/16px var(--mono); color: var(--ink2); cursor: pointer; }
+  .ex-detail { margin-top: 10px; display: none; }
+  .ex-card.open .ex-detail { display: block; }
+  .ex-prompt { background: #f9fafb; border: 1px solid var(--rule2); border-radius: 6px; padding: 10px 12px; font: 10.5px/17px var(--mono); color: #374151; white-space: pre-wrap; max-height: 220px; overflow: auto; }
+  .ex-runs { margin-top: 10px; }
+  .ex-run { display: grid; grid-template-columns: 1fr auto auto auto auto; gap: 14px; align-items: center; padding: 6px 0; border-top: 1px solid var(--rule2); font: 11px/16px var(--mono); }
+  .ex-run button { appearance: none; border: 0; background: none; color: #2563eb; font: inherit; cursor: pointer; padding: 0; }
+
+  /* Summary table + method */
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font: 11px/16px var(--mono); font-variant-numeric: tabular-nums; }
+  th, td { padding: 7px 8px; text-align: right; border-bottom: 1px solid var(--rule2); white-space: nowrap; }
+  th { color: var(--ink3); font-weight: 400; }
+  th:first-child, td:first-child { text-align: left; }
+  td b { font-weight: 500; }
+  td small { color: var(--ink3); margin-left: 6px; }
+  tr.clickable { cursor: pointer; }
+  tr.clickable:hover td { background: #fafafa; }
+  .method { font: 13px/20px var(--serif); color: #374151; max-width: 720px; }
+  .method p { margin: 0 0 10px; }
+  .method code { font: 11px var(--mono); background: var(--rule2); padding: 1px 4px; border-radius: 3px; }
+  @media (max-width: 760px) {
+    .lb-row { grid-template-columns: 44px 1fr 100px; }
+    .lb.outcome .lb-row { grid-template-columns: 1fr 100px; }
+    .lb-grid { inset: 0 104px 0 50px; }
+    .lb.outcome .lb-grid { right: 112px; }
+    .ex-meta { grid-template-columns: 1fr auto; }
+  }
+
+  /* Inline trajectories */
+  .ex-run.focus { background: #fffbea; }
+  .traj { display: none; margin: 0 0 8px; padding: 8px 12px; list-style: none; background: #f9fafb; border: 1px solid var(--rule2); border-radius: 6px; font: 10.5px/17px var(--mono); color: #374151; }
+  .traj.open { display: block; }
+  .traj li { display: grid; grid-template-columns: 22px 1fr auto; gap: 8px; padding: 3px 0; border-top: 1px dashed var(--rule2); }
+  .traj li:first-child { border-top: 0; }
+  .traj .t { color: var(--ink4); }
+  .traj .tool { font-weight: 700; color: var(--ink); }
+  .traj .note { grid-column: 2 / -1; color: var(--ink3); font-style: italic; }
+  .traj .lab { font-size: 9.5px; }
+  .traj .lab.good { color: var(--good); } .traj .lab.bad { color: var(--bad); }
+  .traj .end { grid-template-columns: 22px 1fr; font-weight: 600; }
+  @media (max-width: 760px) { header .meta { display: none; } .ex-run { grid-template-columns: 1fr auto auto; } .ex-run > span:nth-child(3), .ex-run > span:nth-child(4) { display: none; } }
+</style>
+<script>
+  // Cache-bust: data.js is regenerated after every eval run.
+  document.write('<script src="ui/data.js?t=' + Date.now() + '"><\/script><script src="ui/charts.js?t=' + Date.now() + '"><\/script>');
+</script>
+</head>
+<body>
+<header>
+  <div class="brand">roboflow<small>.bench</small></div>
+  <div class="meta" id="data-meta"></div>
+</header>
+
+<main id="results" aria-label="Results">
+  <div class="rx">
+    <h1>Agentic search on real office floors</h1>
+    <p class="intro">Every task hides one real backpack among identical ones: we photographed the same black Databricks
+    backpack in eleven places across four Berkeley floors, with and without a cap and keychain. The agent gets the owner's
+    day (calendar, chat, a badge log with the floors their badge opens, notes taped inside rooms) and must work out which
+    bag is theirs, walk the floors under a fixed budget and at most 12 actions, and report it. Each task is generated so
+    exactly one bag survives the clues, and a deterministic grader checks the report and every step.</p>
+    <nav class="sec-tabs" id="f-diff" aria-label="Difficulty"></nav>
+    <div class="sample-banner">Sample data: model rows and their trajectories come from a mock model to preview layout and colors. They disappear once real model runs exist (or add <code>?real</code> to the URL).</div>
+    <h2 class="sec-title">Lost &amp; Found Leaderboard</h2>
+    <p class="sec-desc" id="lb-desc"></p>
+    <details class="filter">
+      <summary>Filter</summary>
+      <div class="filter-body">
+        <label class="chip-check"><input type="checkbox" id="f-mock"> include pipeline-test (mock) runs</label>
+      </div>
+    </details>
+    <div class="assess"><span class="f-label">Perception</span><span class="chip-group" id="f-perc"></span></div>
+    <div class="view-toggle" id="f-view"></div>
+    <div id="chart-main"></div>
+
+    <div class="mono-label">Overall Pareto frontier</div>
+    <span class="chip-group toggle-sm" id="f-xaxis"></span>
+    <div class="mono-label" id="pareto-title">Overall pass rate vs cost</div>
+    <div id="chart-pareto"></div>
+
+    <div class="cp-card">
+      <div class="cp-top"><h3>First checkpoint failure</h3><span class="chip-group toggle-sm" id="f-task"></span></div>
+      <div class="cp-meta" id="cp-meta"></div>
+      <div id="chart-cp"></div>
+    </div>
+
+    <hr class="rule">
+    <div class="ex-head"><h2>Example evals</h2><span class="ex-count" id="ex-count"></span></div>
+    <p class="sec-desc">Representative tasks with every agent's run. Open one to see the clues the agent got and step through any run.</p>
+    <div id="examples"></div>
+
+    <hr class="rule">
+    <h2>Summary</h2>
+    <p class="sec-desc">All metrics for the current filter. Process = share of steps the clues justified; efficiency = shortest possible cost ÷ cost spent.</p>
+    <div id="chart-table"></div>
+
+    <hr class="rule">
+    <h2>How it's scored</h2>
+    <div class="method" id="method"></div>
+  </div>
+</main>
+
+<script>
+/* Data: ui/data.js (built by scripts/build_ui_data.py) and ui/charts.js. */
+const EVAL = window.EVAL_DATA || { building: { floors: [] }, leaderboard: [], runs: [], outcomes: [] };
+const DIFF_ORDER = ['easy', 'medium', 'hard', 'campus-hard', 'campus-extreme'];
+const DIFFS = [...new Set(EVAL.runs.map((r) => r.difficulty))].sort((a, b) => DIFF_ORDER.indexOf(a) - DIFF_ORDER.indexOf(b));
+const DIFF_LABEL = (d) => ({ 'campus-hard': 'Hard', 'campus-extreme': 'Extreme' }[d] || d.charAt(0).toUpperCase() + d.slice(1));
+const nodeIndex = new Map();   // env room id → { node }
+for (const ef of EVAL.building.floors) for (const n of ef.nodes) nodeIndex.set(n.id, { node: n });
+
+const Results = (() => {
+  const C = window.Charts;
+  const q = new URLSearchParams(location.search);
+  // Sample rows show until real model runs exist (or with ?demo); ?real hides them.
+  const DEMO = q.has('demo') || (!q.has('real') && !EVAL.leaderboard.some((r) => r.kind === 'model'));
+  document.body.classList.toggle('demo', DEMO);
+  const board = DEMO ? EVAL.leaderboard.concat(sampleRows()) : EVAL.leaderboard;
+  const hasCost = board.some((r) => r.kind !== 'scripted' && r.cost_per_run > 0);
+  const f = { diff: 'all', perc: 'oracle', view: 'score', x: hasCost ? 'cost_per_run' : 'turns', mock: false, task: null };
+  const percs = [...new Set(board.map((r) => r.perception))];
+  try {   // filters survive the live-refresh reload
+    const saved = JSON.parse(sessionStorage.getItem('lf-filters') || '{}');
+    for (const k of ['diff', 'perc', 'view', 'x']) if (typeof saved[k] === 'string') f[k] = saved[k];
+  } catch { /* storage unavailable */ }
+  if (!percs.includes(f.perc) && percs.length) f.perc = percs[0];
+  const PERC_LABEL = { oracle: 'Text labels', vlm: 'Raw photos', rfdetr: 'RF-DETR' };
+  const X_LABEL = { cost_per_run: 'cost', tokens: 'tokens', turns: 'turns' };
+  const roomName = (n) => nodeIndex.get(n)?.node.room || n;
+  const esc = (t) => String(t ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  const visibleRun = (r) => r.perception === f.perc && (r.agent.kind !== 'mock' || DEMO || f.mock);
+  const taskCount = (d) => new Set(EVAL.runs.filter((r) => d === 'all' || r.difficulty === d).map((r) => r.task_id)).size;
+
+  function seg(el, key, options, cls) {
+    el.innerHTML = options.map(([v, label, n]) =>
+      `<button type="button" data-v="${v}" aria-pressed="${f[key] === v}">${label}${n != null ? ` <span>(${n})</span>` : ''}</button>`).join('');
+    el.onclick = (e) => {
+      const b = e.target.closest('button');
+      if (!b) return;
+      f[key] = b.dataset.v;
+      el.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      if (key !== 'task') f.task = null;
+      render();
+    };
+  }
+  const diffNav = document.getElementById('f-diff');
+  diffNav.innerHTML = [['all', 'Overall'], ...DIFFS.map((d) => [d, DIFF_LABEL(d)])]
+    .map(([v, l], i) => `${i === 1 ? '<span class="sep">|</span>' : ''}<button type="button" data-v="${v}" aria-pressed="${f.diff === v}">${l}</button>`).join('');
+  diffNav.onclick = (e) => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    f.diff = b.dataset.v; f.task = null;
+    diffNav.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    render();
+  };
+  seg(document.getElementById('f-perc'), 'perc', (percs.length ? percs : ['oracle']).map((p) => [p, PERC_LABEL[p] || p, EVAL.runs.filter((r) => r.perception === p).length]));
+  seg(document.getElementById('f-xaxis'), 'x', [['cost_per_run', 'Cost'], ['tokens', 'Tokens'], ['turns', 'Turns']]);
+  seg(document.getElementById('f-view'), 'view', [['score', 'Overall score'], ['reward', 'Reward'], ['outcome', 'Run-outcome']]);
+  document.getElementById('f-mock').addEventListener('change', (e) => { f.mock = e.target.checked; render(); });
+
+  const goReplayAgent = undefined;   // no per-agent drill-down without the tower
+  // Checkpoint-chart click: open that run's steps in its example card.
+  function goReplayRun(run) {
+    const btn = document.querySelector(`#examples [data-run="${CSS.escape(run.run_id)}"]`);
+    if (!btn) return;
+    const card = btn.closest('.ex-card');
+    if (!card.classList.contains('open')) card.querySelector('.ex-toggle').click();
+    if (!btn.closest('.ex-run').nextElementSibling.classList.contains('open')) btn.click();
+    btn.closest('.ex-run').scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }
+
+  const fmtArgs = (a) => Object.entries(a || {}).filter(([, v]) => v !== '' && v != null)
+    .map(([k, v]) => `${k}=${typeof v === 'string' ? v : JSON.stringify(v)}`).join(', ');
+  function trajHtml(r) {
+    const labels = new Map((r.info.step_labels || []).map((s) => [s.t, s]));
+    const steps = r.trajectory.filter((s) => s.tool !== 'start').map((s) => {
+      const l = labels.get(s.t);
+      const where = s.tool === 'go_to' || s.tool === 'search' ? ` → ${roomName(s.args?.room || s.node)}` : '';
+      return `<li><span class="t">${s.t}</span><span><span class="tool">${esc(s.tool)}</span>(${esc(fmtArgs(s.args))})${esc(where)}</span>
+        <span class="lab ${l?.label || ''}">${l && l.label !== 'neutral' ? esc(l.why || l.label) : ''}</span>
+        ${s.note ? `<span class="note">${esc(s.note)}</span>` : ''}</li>`;
+    }).join('');
+    return `${steps}<li class="end"><span></span><span>${esc(r.info.outcome.replace(/_/g, ' '))} · reward ${(+r.info.reward).toFixed(2)} · budget ${r.info.spent}/${r.info.budget}</span></li>`;
+  }
+
+  // Tasks with runs from the visible agents, most varied (by first-failure checkpoint) first.
+  function exampleTasks() {
+    const byTask = new Map();
+    for (const r of EVAL.runs) {
+      if (!visibleRun(r) || (f.diff !== 'all' && r.difficulty !== f.diff)) continue;
+      if (!byTask.has(r.task_id)) byTask.set(r.task_id, []);
+      byTask.get(r.task_id).push(r);
+    }
+    const agentsShown = new Set([...byTask.values()].flat().map((r) => r.agent.id)).size;
+    const scored = [...byTask.entries()]
+      .filter(([, rs]) => new Set(rs.map((r) => r.agent.id)).size === agentsShown)
+      .map(([id, rs]) => ({ id, runs: rs, difficulty: rs[0].difficulty,
+        variety: new Set(rs.map((r) => C.checkpointProgress(r).failAt)).size, pass: rs.filter((r) => r.info.success).length / rs.length }))
+      .sort((a, b) => b.variety - a.variety || Math.abs(0.5 - a.pass) - Math.abs(0.5 - b.pass));
+    if (f.diff !== 'all') return scored.slice(0, 3);
+    return DIFFS.map((d) => scored.find((t) => t.difficulty === d)).filter(Boolean);
+  }
+
+  function render() {
+    if (!C) return;
+    try { sessionStorage.setItem('lf-filters', JSON.stringify({ diff: f.diff, perc: f.perc, view: f.view, x: f.x })); } catch { /* ignore */ }
+    const rows = board
+      .filter((r) => r.difficulty === f.diff && r.perception === f.perc && (f.mock || r.kind !== 'mock'))
+      .sort((a, b) => (f.view === 'reward' ? b.reward - a.reward : b.success - a.success));
+    const nTasks = taskCount(f.diff);
+    document.getElementById('lb-desc').textContent =
+      `Share of tasks where the agent reported the owner's backpack (${nTasks} frozen tasks${f.diff === 'all' ? '' : `, ${DIFF_LABEL(f.diff).toLowerCase()}`}). ` +
+      'Error bars are 95% bootstrap intervals. Reward adds efficiency and reasoning quality; run-outcome shows how runs ended.';
+    const main = document.getElementById('chart-main');
+    const empty = '<div class="empty">No runs match these filters.</div>';
+    if (!rows.length) { main.innerHTML = empty; }
+    else if (f.view === 'outcome') C.stacked(main, rows, EVAL.outcomes, { onClick: goReplayAgent });
+    else C.bars(main, rows, {
+      value: f.view === 'reward' ? 'reward' : 'success', ci: f.view === 'reward' ? 'reward_ci' : 'success_ci',
+      fmt: f.view === 'reward' ? (v) => v.toFixed(3) : C.pct, min: f.view === 'reward' ? -0.25 : 0, max: 1, onClick: goReplayAgent,
+    });
+    document.getElementById('pareto-title').textContent = `${f.diff === 'all' ? 'Overall' : f.diff} pass rate vs ${X_LABEL[f.x]}`;
+    if (rows.length) C.pareto(document.getElementById('chart-pareto'), rows, { x: f.x, y: 'success', onClick: goReplayAgent });
+    else document.getElementById('chart-pareto').innerHTML = empty;
+    if (rows.length) C.table(document.getElementById('chart-table'), rows, { onClick: goReplayAgent });
+    else document.getElementById('chart-table').innerHTML = empty;
+
+    // Checkpoint chart + example evals share the same example tasks.
+    const tasks = exampleTasks();
+    if (!tasks.find((t) => t.id === f.task)) f.task = tasks[0]?.id || null;
+    seg(document.getElementById('f-task'), 'task', tasks.map((t) => [t.id, `${t.difficulty} · ${t.id.slice(0, 6)}`]));
+    const cur = tasks.find((t) => t.id === f.task);
+    document.getElementById('cp-meta').textContent = cur
+      ? `${cur.difficulty} task ${cur.id} · bag in ${roomName(cur.runs[0].answer.target.node)} · one run per agent · hover a line, click to see its steps` : '';
+    C.checkpoints(document.getElementById('chart-cp'), cur ? cur.runs : [], { onClick: goReplayRun, roomName });
+    renderExamples(tasks);
+  }
+
+  function renderExamples(tasks) {
+    document.getElementById('ex-count').textContent = `${tasks.length} task${tasks.length === 1 ? '' : 's'}`;
+    const box = document.getElementById('examples');
+    if (!tasks.length) { box.innerHTML = '<div class="empty">No tasks with runs from every agent yet.</div>'; return; }
+    box.innerHTML = tasks.map((t, i) => {
+      const r0 = t.runs[0], a = r0.answer, pass = Math.round(t.pass * 100);
+      const floors = new Set(EVAL.building.floors.map((fl) => fl.floor)).size;
+      const prompt = [
+        r0.task, '',
+        'CALENDAR', ...(a.clues.calendar || []).map((e) => `  ${e.start}–${e.end}  ${e.title}  @ ${e.room}${e.floor != null ? ` (floor ${e.floor})` : ''}`), '',
+        'CHAT', ...(a.clues.chat || []).map((c) => `  ${c.time}  ${c.from}: ${c.text}`), '',
+        'BADGE LOG', ...(() => {
+          const bl = a.clues.badge_log || [];
+          const entries = Array.isArray(bl) ? bl : bl.entries || [];
+          const access = !Array.isArray(bl) && bl.access
+            ? [`  access: ${bl.access.allowed.join(', ')}${bl.access.no_access.length ? ` · NO access: ${bl.access.no_access.join(', ')}` : ''}`] : [];
+          return access.concat(entries.map((e) => `  ${e.time}  ${e.event}`));
+        })(),
+        ...(Object.keys(a.notes || {}).length ? ['', 'NOTES IN ROOMS (found by searching)', ...Object.values(a.notes).map((n) => `  ${n}`)] : []),
+      ].join('\n');
+      const runs = [...t.runs].sort((x, y) => y.info.reward - x.info.reward);
+      return `<article class="ex-card" data-i="${i}">
+        <div class="ex-meta"><span class="bench">${t.difficulty}</span><span><b>${t.id}</b></span>
+          <span>${floors} floors · budget ${r0.info.budget}</span>
+          <span class="badge ${pass >= 50 ? 'high' : 'low'}">${pass}% pass</span></div>
+        <p class="ex-body">Find ${esc(r0.task.match(/^(.+?) \(/)?.[1] || 'the owner')}'s ${esc(a.target.description)}.
+          The bag was left in ${esc(roomName(a.target.node))}${a.decoys.length ? `, with ${a.decoys.length} look-alike decoy${a.decoys.length > 1 ? 's' : ''} nearby` : ''}${Object.keys(a.notes || {}).length ? ' and a room change posted only on a note' : ''}.</p>
+        <div class="ex-foot"><button type="button" class="ex-toggle">View ${t.runs.length} trajectories ⌄</button></div>
+        <div class="ex-detail">
+          <div class="mono-label" style="margin-top:4px">Task prompt + clues</div>
+          <div class="ex-prompt">${esc(prompt)}</div>
+          <div class="mono-label">${t.runs.length} agents ran this task</div>
+          <div class="ex-runs">${runs.map((r) => `<div class="ex-run">
+              <span><i class="sq" style="background:${C.agentColor(r.agent)}"></i>${esc(r.agent.label)}</span>
+              <span class="badge ${r.info.success ? 'high' : 'low'}">${esc(r.info.outcome.replace(/_/g, ' '))}</span>
+              <span>reward ${(+r.info.reward).toFixed(2)}</span><span>${r.trajectory.length - 1} steps</span>
+              <button type="button" data-run="${esc(r.run_id)}">Steps ⌄</button></div>
+              <ol class="traj">${trajHtml(r)}</ol>`).join('')}</div>
+        </div></article>`;
+    }).join('');
+    box.querySelectorAll('.ex-card').forEach((card) => {
+      const t = tasks[+card.dataset.i];
+      card.querySelector('.ex-toggle').addEventListener('click', (e) => {
+        card.classList.toggle('open');
+        e.currentTarget.textContent = card.classList.contains('open') ? 'Hide trajectories ⌃' : `View ${t.runs.length} trajectories ⌄`;
+      });
+      card.querySelectorAll('[data-run]').forEach((b) => b.addEventListener('click', () => {
+        const list = b.closest('.ex-run').nextElementSibling;
+        list.classList.toggle('open');
+        b.textContent = list.classList.contains('open') ? 'Steps ⌃' : 'Steps ⌄';
+      }));
+    });
+  }
+
+  // Placeholder leaderboard rows (sample mode only), clearly labelled and never mixed into real results.
+  function sampleRows() {
+    const specs = [
+      ['opus-5.5', 'Claude Opus 5.5', '#d0866c', 0.62], ['gpt-6.1-sol', 'GPT-6.1 Sol', '#3a3936', 0.57],
+      ['grok-4.7', 'Grok 4.7', '#d4b97e', 0.49], ['gemini-4-argon', 'Gemini 4 Argon', '#6f93e0', 0.54],
+      ['qwen-3.8-vl-27b', 'Qwen 3.8 VL 27B', '#8b74d6', 0.28],
+    ];
+    const out = [];
+    for (const diff of ['all', ...DIFFS]) {
+      const shift = diff === 'all' ? 0 : diff.includes('extreme') ? -0.22 : diff === 'easy' ? 0.2 : -0.05;
+      const n = diff === 'all' ? 30 * DIFFS.length : 30;
+      specs.forEach(([id, label, color, base], i) => {
+        const succ = Math.max(0.05, Math.min(0.97, base + shift));
+        const half = 1.96 * Math.sqrt((succ * (1 - succ)) / n);
+        for (const perception of ['oracle', 'vlm']) {
+          const s2 = Math.max(0.03, succ - (perception === 'vlm' ? 0.12 : 0)), k2 = Math.round(s2 * n);
+          const wrong = Math.round((n - k2) * 0.55);
+          out.push({
+            agent: id, label, harness: id.startsWith('qwen') ? 'Roboflow native' : 'Roboflow', color, kind: 'demo', perception, difficulty: diff, n,
+            success: k2 / n, success_ci: [Math.max(0, k2 / n - half), Math.min(1, k2 / n + half)],
+            reward: (k2 / n) * 0.82 - 0.04, reward_ci: [(k2 / n) * 0.82 - 0.1, (k2 / n) * 0.82 + 0.02],
+            process: 0.6 + base * 0.4, efficiency: 0.4 + base * 0.4, budget_used: 0.7, turns: 9 + i,
+            tokens: 40000 + i * 9000, cost_per_run: perception === 'vlm' ? 0.09 + base * 0.12 : 0.03 + base * 0.08,
+            cost_per_success: null,
+            outcomes: { success: k2, decoy: Math.ceil(wrong / 2), bystander_bag: Math.floor(wrong / 2), gave_up: 1,
+                        budget_exhausted: Math.max(0, n - k2 - wrong - 1) },
+          });
+        }
+      });
+    }
+    return out;
+  }
+
+  document.getElementById('method').innerHTML = `
+    <p><b>Task.</b> Built backwards from the answer: pick one of the eleven photographed bags, write a hidden day that
+    puts the owner there between "last had it" and "noticed it gone", then plant clues so every look-alike is ruled out.</p>
+    <p><b>How look-alikes are ruled out.</b> The bag's details are split across messages (cap? keys? sometimes corrected
+    later). Look-alikes on floors the owner's badge cannot open are on their <i>restricted floors</i> list in the badge log.
+    Others are claimed by a coworker, were seen in a room before the owner arrived, or sit where the owner only passed
+    through. Traps: cancelled meetings still on the calendar, meetings moved by chains of taped notes, the owner's own wrong guess.</p>
+    <p><b>Tools.</b> <code>read_calendar</code> <code>read_chat</code> <code>read_badge_log</code> <code>go_to</code>
+    <code>search</code> <code>inspect</code> <code>zoom</code> <code>report</code> <code>give_up</code>, each with a budget cost; 12 actions max.</p>
+    <p><b>Reward.</b> <code>reward_outcome</code> = 1 if the owner's bag is reported, else 0 (the RL signal).
+    <code>reward_shaped</code> = 0.5 + 0.25 × efficiency + 0.25 × process on success, −0.25 for the wrong bag.</p>
+    <p><b>Rubric (process).</b> Read calendar and chat before moving · checked badge access when it matters · followed
+    the note chain in order · never searched a ruled-out room · inspected or zoomed on the bag before reporting · at
+    most two wrong inspections. Each item is checked from the trajectory and the hidden facts.</p>
+    <p><b>Verification.</b> Every task is re-derived from its hidden facts and rejected unless exactly one bag survives;
+    the shortest correct plan fits in 10 actions; a sweep of every bag costs at least 1.8x the budget. <code>tests/test_campus.py</code>
+    checks this on 600 tasks and red-teams guessing, appearance-only search, trusting the owner's guess and brute force.</p>`;
+  render();
+  return { render };
+})();
+
+
+document.getElementById('data-meta').textContent = EVAL.runs.length
+  ? `${EVAL.runs.length} runs · built ${EVAL.generated}` : 'no results bundle (run scripts/build_ui_data.py)';
+
+/* Live results: scripts/watch_results.sh rebuilds ui/data.js as runs land; the page polls a small stamp file.
+   It reloads in place, keeping filters and scroll position. */
+(() => {
+  let seen = null;
+  try {
+    const y = sessionStorage.getItem('lf-scroll');
+    if (y) {
+      sessionStorage.removeItem('lf-scroll');
+      requestAnimationFrame(() => { document.getElementById('results').scrollTop = +y; });
+    }
+  } catch { /* ignore */ }
+  async function poll() {
+    try {
+      const st = await (await fetch('ui/stamp.json?t=' + Date.now(), { cache: 'no-store' })).json();
+      if (seen === null) { seen = st.ids; return; }
+      if (st.ids === seen) return;
+      try { sessionStorage.setItem('lf-scroll', String(document.getElementById('results').scrollTop)); } catch { /* ignore */ }
+      location.reload();
+    } catch { /* no stamp (static hosting without builds) */ }
+  }
+  poll();
+  setInterval(poll, 20000);
+})();
+
+</script>
+</body>
+</html>
